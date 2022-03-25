@@ -1,8 +1,28 @@
-body {
-  font:  "Lucida Grande", Helvetica, Arial, sans-serif;
+*{
+  font-family: 'Poppins', sans-serif;
+}
+html{
+  scroll-behavior: smooth;
 }
 
 a {
   color: #00B7FF;
 }
 
+.navbar .nav-link {
+  color: #fff !important;
+}
+li{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+.about-img{
+  width: 350px;
+}
+
+@media only screen and (max-width: 600px) {
+  .img-banner{
+    height: 300px;
+    
+  }
+}
