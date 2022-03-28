@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/login', function(req, res, next) {
-  res.render("judges/judges-login");
+  res.render("judges/judges-login", { showheader:false });
 });
 
 router.get('/mark-entering', function(req, res, next) {

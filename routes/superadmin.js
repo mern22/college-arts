@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/login', function(req, res, next) {
-    res.render('superadmin/admin-login');
+    res.render('superadmin/admin-login', { showheader:false });
 });
 router.get('/dashboard', function(req, res, next) {
   res.render('superadmin/admin-dashboard');
