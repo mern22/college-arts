@@ -1,0 +1,465 @@
+<!--Main Navigation-->
+<header>
+  <!-- Sidebar -->
+  <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+    <div class="position-sticky">
+      <div class="list-group list-group-flush mx-3 mt-4 py-3">
+        <a href="#" class="list-group-item list-group-item-action py-3 ripple active" aria-current="true">
+          <i class="fas fa-tachometer-alt fa-fw me-3 "></i><span>Dashboard</span>
+        </a>
+        <a href="#participants" class="list-group-item list-group-item-action py-3 ripple">
+          <i class="fas fa-users fa-fw me-3"></i><span>Participants</span>
+        </a>
+        <a href="#judges" class="list-group-item list-group-item-action py-3 ripple"><i
+            class="fas fa-graduation-cap fa-fw me-3"></i><span>Judges</span></a>
+        <a href="#stages" class="list-group-item list-group-item-action py-3 ripple"><i
+            class="fas fa-landmark fa-fw me-3"></i><span>Stages</span></a>
+        
+
+      </div>
+    </div>
+  </nav>
+  <!-- Sidebar -->
+
+  <!-- Navbar -->
+  <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+        aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Brand -->
+      <a class="navbar-brand ms-5" href="#">
+        <h2>Logo</h2>
+      </a>
+      <!-- Search form -->
+
+
+      <!-- Right links -->
+      <ul class="navbar-nav ms-auto d-flex flex-row">
+        <!-- Notification dropdown -->
+
+        <!-- Avatar -->
+        <li class="nav-item dropdown me-3">
+          <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
+            id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-user-circle"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+            
+            <li>
+              <a class="dropdown-item" href="#">Logout</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+</header>
+<!--Main Navigation-->
+
+<!--Main layout-->
+<main style="margin-top: 70px;">
+  <div class="container pt-4">
+    <section class="text-center mt-2 container">
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Event Details</h5>
+              <p class="card-text">Click on Add details to send messgaes about the events</p>
+              <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                Click Here
+              </button>
+
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Programs</h5>
+                      <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                      <form action="">
+                        
+                          <div class="modal-body">
+                            <div class="my-2">
+                              <input type="text" id="typeText" placeholder="Title" class="form-control" />
+                            </div>
+                            <div class=" mb-4">
+                              <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
+                            </div>
+                            <div>
+                              <input type="file" class="form-control" id="customFile" />
+                            </div>
+
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success">Save</button>
+                          </div>
+
+                      </form>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Notifications</h5>
+              <p class="card-text">Send Notifications or other information to students</p>
+              <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal2">
+                Click here
+              </button>
+              <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Students Program</h5>
+                      <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                   <form action="">
+                          <div class="modal-body">
+
+                          <div class="my-2">
+                            <input type="text" id="typeText" placeholder="Title" class="form-control" />
+                          </div>
+                          <div class=" mb-4">
+                            <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
+                          </div>
+                          <div>
+                            <input type="file" class="form-control" id="customFile" />
+                          </div>
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-success">Save</button>
+                        </div>
+                   </form>
+
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <hr class="my-5 " />
+    <section id="participants" class="container">
+      <h3 class="my-5 text-center">Participating Students</h3>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Name</th>
+            <th scope="col">Item</th>
+            <th scope="col">Stage</th>
+            <th scope="col">Day</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>548421</td>
+            <td>1</td>
+            
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>874512</td>
+            <td>1</td>
+           
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+    <hr class="my-5 " />
+    <section id="judges" class="container">
+      <h3 class="mt-5">Add Judges</h3>
+      <button class="btn btn-primary add-one my-2">Add judges</button>
+      <div class="form-group dynamic-element" style="display:none">
+        <div class="row">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseOne"
+                  aria-expanded="true" aria-controls="collapseOne">
+                  Judge
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                data-mdb-parent="#accordionExample">
+                <div class="accordion-body">
+
+
+                  <form class="container">
+
+                    <div class="row">
+                      <div class="form-group col-md-6">
+                        <label for="inputState">Day</label>
+                        <select id="inputState" class="form-control">
+                          <option selected>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+
+                        </select>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="inputState">Stage</label>
+                        <select id="inputState" class="form-control">
+                          <option selected>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row mt-2">
+                      <div class="form-group col-md-6">
+                        <label for="inputAddress">Name</label>
+                        <input type="text" class="form-control" id="inputAddress">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="inputAddress2">Username</label>
+                        <input type="text" class="form-control" id="inputAddress2">
+                      </div>
+                    </div>
+                    <div class="row mt-2">
+                      <div class="form-group col-md-6">
+                        <label for="inputCity">Password</label>
+                        <input type="password" class="form-control" id="inputCity">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="inputCity">Confirm Password</label>
+                        <input type="password" class="form-control" id="inputCity">
+                      </div>
+
+                    </div>
+                    <button type="submit" class="mt-3 btn btn-primary">Save</button>
+
+                  </form>
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of fields-->
+        <div class="col-md-1 my-1">
+          <button class="btn btn-danger delete">Delete</button>
+        </div>
+      </div>
+      <div class="dynamic-stuff">
+        <!-- Dynamic element will be cloned here -->
+        <!-- You can call clone function once if you want it to show it a first element-->
+      </div>
+
+
+
+
+    </section>
+     <hr class="my-5 " />
+    <section id="stages">
+      <div class="container my-5">
+        <h3 class="mb-3 text-center">Stages Information</h3>
+
+        <form action="" method="post">
+
+          <div class="form-group col-md-4 d-flex">
+            <select id="inputState" class="form-control">
+              <option selected>1</option>
+              <option>2</option>
+              <option>3</option>
+               <option>4</option>
+            </select>
+             <button type="submit" class="btn btn-outline-primary mx-3" data-mdb-ripple-color="dark">Search</button>
+          </div>
+
+        </form>
+
+        <table class="table table-bordered">
+              <h5 class="text-primary my-4">Judges Information</h5>
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Judge</th>
+                <th scope="col">Username</th>
+                <th scope="col">Password</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>548421</td>
+                
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>874512</td>
+              
+              </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-bordered">
+              <h5 class="text-primary my-4">Participants Information</h5>
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Student</th>
+                <th scope="col">Item</th>
+                <th scope="col">Chest number</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>548421</td>
+                
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>874512</td>
+              
+              </tr>
+            </tbody>
+        </table>
+      </div>
+    </section>
+    <hr class="my-5 " />
+  </div>
+
+
+
+</main>
+<!--Main layout-->
+
+
+{{!-- styles for dashboard --}}
+<style>
+  body {
+    background-color: #fbfbfb;
+  }
+
+  @media (min-width: 991.98px) {
+    main {
+      padding-left: 240px;
+    }
+  }
+
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 58px 0 0;
+    /* Height of navbar */
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+    width: 240px;
+    z-index: 600;
+  }
+
+  @media (max-width: 991.98px) {
+    .sidebar {
+      width: 100%;
+    }
+  }
+
+  .sidebar .active {
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  }
+
+  .fa-user-circle {
+    font-size: 25px;
+    color: #fff;
+  }
+
+  .sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: 0.5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Scrollable contents if viewport is shorter than content. */
+  }
+  *{
+  font-family: 'Poppins', sans-serif;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.navbar .nav-link {
+  color: #fff !important;
+}
+li{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+.about-img{
+  width: 350px;
+}
+
+</style>
+
+{{!-- script for dynamic form --}}
+<script>
+  //Clone the hidden element and shows it
+  $('.add-one').click(function () {
+    $('.dynamic-element').first().clone().appendTo('.dynamic-stuff').show();
+    attach_delete();
+  });
+
+
+  //Attach functionality to delete buttons
+  function attach_delete() {
+    $('.delete').off();
+    $('.delete').click(function () {
+      console.log("click");
+      $(this).closest('.form-group').remove();
+    });
+  }
+</script>
