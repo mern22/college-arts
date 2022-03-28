@@ -1,33 +1,72 @@
-<nav class="navbar navbar-expand-lg navbar-dark fw-bold bg-primary mb-4">
-  <div class="container-fluid">
-    <a class="navbar-brand p-3 px-5" href="#">College Arts</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<nav class="navbar navbar-expand-lg fixed-top navbar-light py-3 bg-primary">
+  <!-- Container wrapper -->
+  <div class="container-fluid px-5">
+    <!-- Toggle button -->
+    
+        <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarRightAlignExample"
+        aria-controls="navbarRightAlignExample"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <h3 class="text-white">Logo</h3>
+    
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarRightAlignExample">
+      <!-- Left links -->
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        {{#if showheader}}
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active mx-3" aria-current="page" href="#aboutus">About Us </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active px-5" href="#">About</a>
+          <a class="nav-link active mx-3" aria-current="page" href="#recent">Recents </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link mx-3 active" href="#contact">Contact us</a>
+        </li>
+        {{/if}}
+        <!-- Navbar dropdown -->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+          <a
+            class="nav-link dropdown-toggle mx-3"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Accounts
           </a>
+          <!-- Dropdown menu -->
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li>
+              <a class="dropdown-item" href="/login"><i class="fas fa-user-alt me-3"></i> Student</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/superadmin/login"><i class="fas fa-user-alt me-3"></i>Admin</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/organiser/login"><i class="fas fa-user-alt me-3"></i>Organiser</a>
+            </li>
+             <li>
+              <a class="dropdown-item" href="/judges/login"><i class="fas fa-user-alt me-3"></i>Judges</a>
+            </li>
+             <li>
+              <a class="dropdown-item" href="/artsclub/login"><i class="fas fa-user-alt me-3"></i>Arts club</a>
+            </li>
           </ul>
         </li>
+        
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-dark" type="submit">Search</button>
-      </form>
+      <!-- Left links -->
     </div>
+    <!-- Collapsible wrapper -->
   </div>
+  <!-- Container wrapper -->
 </nav>
