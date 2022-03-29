@@ -205,6 +205,7 @@
               </button>
             </li> --}}
           </ul>
+          {{!-- solo item pills --}}
           <div class="tab-content" id="pills-tabContent2">
             <div
               class="tab-pane fade show active"
@@ -213,14 +214,15 @@
               aria-labelledby="pills-home-tab2"
             >
               
-                   <table class="table align-middle mb-0 bg-white">
+ {{!-- Solo item table  --}}
+<table class="table align-middle mb-0 bg-white">
   <thead class="bg-light">
     <tr>
       <th>Name</th>
-      <th>Title</th>
-      <th>Status</th>
-      <th>Position</th>
-      <th>Actions</th>
+      <th>Register No</th>
+      <th>Item</th>
+      <th>Details</th>
+      <th>Verify</th>
     </tr>
   </thead>
   <tbody>
@@ -240,17 +242,20 @@
         </div>
       </td>
       <td>
-        <p class="fw-normal mb-1">Software engineer</p>
-        <p class="text-muted mb-0">IT department</p>
+        <p class="fw-normal mb-1">19130623</p>
+        {{!-- <p class="text-muted mb-0">IT department</p> --}}
       </td>
       <td>
         <span class="badge badge-success rounded-pill d-inline">Active</span>
       </td>
-      <td>Senior</td>
-      <td>
-        <button type="button" class="btn btn-link btn-sm btn-rounded">
+      <td><button type="button" class="btn btn-link btn-sm btn-rounded">
           View
-        </button>
+        </button></td>
+      <td>
+        <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+        {{!-- <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label> --}}
+        </div>
       </td>
     </tr>
     <tr>
@@ -269,23 +274,21 @@
         </div>
       </td>
       <td>
-        <p class="fw-normal mb-1">Consultant</p>
-        <p class="text-muted mb-0">Finance</p>
+        <p class="fw-normal mb-1">19130620</p>
+      
       </td>
       <td>
         <span class="badge badge-primary rounded-pill d-inline"
               >Onboarding</span
           >
       </td>
-      <td>Junior</td>
-      <td>
-        <button
-                type="button"
-                class="btn btn-link btn-rounded btn-sm fw-bold"
-                data-mdb-ripple-color="dark"
-                >
+      <td><button type="button" class="btn btn-link btn-sm btn-rounded">
           View
-        </button>
+        </button></td>
+      <td>
+        <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+      </td>
       </td>
     </tr>
     <tr>
@@ -304,21 +307,17 @@
         </div>
       </td>
       <td>
-        <p class="fw-normal mb-1">Designer</p>
-        <p class="text-muted mb-0">UI/UX</p>
+        <p class="fw-normal mb-1">191306**</p>
       </td>
       <td>
         <span class="badge badge-warning rounded-pill d-inline">Awaiting</span>
       </td>
-      <td>Senior</td>
-      <td>
-        <button
-                type="button"
-                class="btn btn-link btn-rounded btn-sm fw-bold"
-                data-mdb-ripple-color="dark"
-                >
+       <td><button type="button" class="btn btn-link btn-sm btn-rounded">
           View
-        </button>
+        </button></td>
+      <td>
+       <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
       </td>
     </tr>
      <tr>
@@ -356,12 +355,14 @@
     </tr>
   </tbody>
 </table>
+{{!-- solo item table ends --}}
 
 
 
 
 
             </div>
+            {{!-- group pills --}}
             <div
               class="tab-pane fade"
               id="pills-profile2"
@@ -369,15 +370,15 @@
               aria-labelledby="pills-profile-tab2"
             >
               
-
-             <table class="table align-middle mb-0 bg-white">
+{{!-- group Table --}}
+<table class="table align-middle mb-0 bg-white">
   <thead class="bg-light">
     <tr>
-      <th>Name</th>
-      <th>Title</th>
-      <th>Status</th>
-      <th>Position</th>
-      <th>Actions</th>
+      <th>Group Leader</th>
+      <th>Register No</th>
+      <th>Item</th>
+      <th>Details</th>
+      <th>Verify</th>
     </tr>
   </thead>
   <tbody>
@@ -397,17 +398,47 @@
         </div>
       </td>
       <td>
-        <p class="fw-normal mb-1">Software engineer</p>
-        <p class="text-muted mb-0">IT department</p>
+        <p class="fw-normal mb-1">19130623</p>
+        {{!-- <p class="text-muted mb-0">IT department</p> --}}
       </td>
       <td>
-        <span class="badge badge-success rounded-pill d-inline">Active</span>
+        <span class="badge badge-success rounded-pill d-inline">Margam kali</span>
       </td>
-      <td>Senior</td>
       <td>
-        <button type="button" class="btn btn-link btn-sm btn-rounded">
-          View
-        </button>
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+  View
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5>Group Leader : AKHIL P R</h5>
+        <h5>Team Members</h5>
+        <h6>AJEESH CP 19130640</h6>
+        <h6>AKHIL C 19130645</h6>
+        <h6>SHABEEB P K B 19450630</h6>
+        <h6>ATHUL KRISHNAN B 19530630</h6>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+</td>
+      <td>
+        <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+        {{!-- <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label> --}}
+        </div>
       </td>
     </tr>
     <tr>
@@ -426,23 +457,47 @@
         </div>
       </td>
       <td>
-        <p class="fw-normal mb-1">Consultant</p>
-        <p class="text-muted mb-0">Finance</p>
+        <p class="fw-normal mb-1">19130620</p>
+      
       </td>
       <td>
         <span class="badge badge-primary rounded-pill d-inline"
-              >Onboarding</span
+              >Kuchupudi</span
           >
       </td>
-      <td>Junior</td>
       <td>
-        <button
-                type="button"
-                class="btn btn-link btn-rounded btn-sm fw-bold"
-                data-mdb-ripple-color="dark"
-                >
-          View
-        </button>
+        <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+  View
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5>Group Leader : AKHIL P R</h5>
+        <h5>Team Members</h5>
+        <h6>AJEESH CP 19130640</h6>
+        <h6>AKHIL C 19130645</h6>
+        <h6>SHABEEB P K B 19450630</h6>
+        <h6>ATHUL KRISHNAN B 19530630</h6>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+        </td>
+      <td>
+        <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+      </td>
       </td>
     </tr>
     <tr>
@@ -461,21 +516,43 @@
         </div>
       </td>
       <td>
-        <p class="fw-normal mb-1">Designer</p>
-        <p class="text-muted mb-0">UI/UX</p>
+        <p class="fw-normal mb-1">191306**</p>
       </td>
       <td>
-        <span class="badge badge-warning rounded-pill d-inline">Awaiting</span>
+        <span class="badge badge-warning rounded-pill d-inline">Mohiniyattam</span>
       </td>
-      <td>Senior</td>
-      <td>
-        <button
-                type="button"
-                class="btn btn-link btn-rounded btn-sm fw-bold"
-                data-mdb-ripple-color="dark"
-                >
-          View
+       <td>
+        <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+        View
         </button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5>Group Leader : AKHIL P R</h5>
+        <h5>Team Members</h5>
+        <h6>AJEESH CP 19130640</h6>
+        <h6>AKHIL C 19130645</h6>
+        <h6>SHABEEB P K B 19450630</h6>
+        <h6>ATHUL KRISHNAN B 19530630</h6>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+        </td>
+      <td>
+       <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
       </td>
     </tr>
      <tr>
@@ -513,12 +590,7 @@
     </tr>
   </tbody>
 </table>
-
-
-
-
-
-
+{{!-- end of roup table --}}
             </div>
             {{!-- <div
               class="tab-pane fade"
@@ -529,6 +601,7 @@
               Tab 3 content
             </div> --}}
           </div>
+          {{!-- end of group pills --}}
                         
 
 
@@ -539,7 +612,7 @@
       <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
          <h5>The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn't distract from the layout. A practice not without controversy, laying out pages with meaningless filler text can be very useful when the focus is meant to be on design, not content.
 
-The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software. Today it's seen all around the web; on templates, websites, and stock designs. Use our generator to get your own, or read on for the authoritative history of lorem ipsum.</h5>
+            The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software. Today it's seen all around the web; on templates, websites, and stock designs. Use our generator to get your own, or read on for the authoritative history of lorem ipsum.</h5>
       </div>
     </div>
   </div>
