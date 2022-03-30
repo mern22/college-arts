@@ -3,27 +3,17 @@
   <!-- Sidebar -->
   <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
     <div class="position-sticky">
-      <div class="list-group list-group-flush mx-3 mt-4">
-        <a
-          href="#"
-          class="list-group-item list-group-item-action py-3 ripple active"
-          aria-current="true"
-        >
-          <i class="fas fa-tachometer-alt fa-fw me-3 "></i><span>Main dashboard</span>
-        </a>
-        <a href="application-form" class="list-group-item list-group-item-action py-3 ripple">
-          <i class="fas fa-chart-area fa-fw me-3"></i><span>Application form</span>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action py-3 ripple"
-          ><i class="fas fa-lock fa-fw me-3"></i><span>Password</span></a
-        >
-        <a href="#" class="list-group-item list-group-item-action py-3 ripple"
-          ><i class="fas fa-chart-line fa-fw me-3"></i><span>Analytics</span></a
-        >
-        <a href="#" class="list-group-item list-group-item-action py-3 ripple">
-          <i class="fas fa-chart-pie fa-fw me-3"></i><span>SEO</span>
-        </a>
-       
+      <div class="list-group list-group-flush mx-3 mt-4 py-3" id="list-tab" role="tablist">
+
+        <a class="list-group-item list-group-item-action active py-3" id="list-home-list" data-mdb-toggle="list"
+          href="#list-home" role="tab" aria-controls="list-home">Dashboard</a>
+        <a class="list-group-item list-group-item-action py-3" id="list-profile-list" data-mdb-toggle="list"
+          href="#list-profile" role="tab" aria-controls="list-profile">Application form</a>
+        <a class="list-group-item list-group-item-action py-3" id="list-messages-list" data-mdb-toggle="list"
+          href="#list-messages" role="tab" aria-controls="list-messages">Apllication List</a>
+        <a class="list-group-item list-group-item-action py-3" id="list-settings-list" data-mdb-toggle="list"
+          href="#list-settings" role="tab" aria-controls="list-settings">Stages</a>
+
       </div>
     </div>
   </nav>
@@ -34,15 +24,8 @@
     <!-- Container wrapper -->
     <div class="container-fluid">
       <!-- Toggle button -->
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-mdb-toggle="collapse"
-        data-mdb-target="#sidebarMenu"
-        aria-controls="sidebarMenu"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+        aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
 
@@ -51,34 +34,20 @@
         <h2>Logo</h2>
       </a>
       <!-- Search form -->
-      
+
 
       <!-- Right links -->
       <ul class="navbar-nav ms-auto d-flex flex-row">
         <!-- Notification dropdown -->
-       
+
         <!-- Avatar -->
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center"
-            href="#"
-            id="navbarDropdownMenuLink"
-            role="button"
-            data-mdb-toggle="dropdown"
-            aria-expanded="false"
-          >
-           <i class="fas fa-user-circle"></i>
+        <li class="nav-item dropdown me-3">
+          <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
+            id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-user-circle"></i>
           </a>
-          <ul
-            class="dropdown-menu dropdown-menu-end"
-            aria-labelledby="navbarDropdownMenuLink"
-          >
-            <li>
-              <a class="dropdown-item" href="#">My profile</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Settings</a>
-            </li>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+
             <li>
               <a class="dropdown-item" href="#">Logout</a>
             </li>
@@ -93,56 +62,377 @@
 <!--Main Navigation-->
 
 <!--Main layout-->
-<main style="margin-top: 58px;">
-  <div class="container pt-4">
-    <h1>Contents Hereeee....</h1>
+<main style="margin-top: 70px;">
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active pt-5" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+      <section style="background-color: #eee;">
+        <div class="container py-3">
+
+          <h3>Profile</h3>
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="card mb-4">
+                <div class="card-body text-center">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                    class="rounded-circle img-fluid" style="width: 150px;">
+                  <h5 class="my-3">Athul krishnan.B</h5>
+                  <p class="text-muted mb-1">REG no:19130636</p>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-8">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Full Name</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0">Athul krishnan.B</p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Email</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0">athulkrishnan780@gmail.com</p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Phone</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0">7034123854</p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Mobile</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0">(098) 765-4321</p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Address</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+      <hr class="my-5 " />
+      <div class="container">
+        <section class="vh-100 gradient-custom">
+
+
+          <!-- Pills navs -->
+          <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab"
+                aria-controls="pills-login" aria-selected="true">Solo</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="tab-register" data-mdb-toggle="pill" href="#pills-register" role="tab"
+                aria-controls="pills-register" aria-selected="false">Group</a>
+            </li>
+          </ul>
+          <!-- Pills navs -->
+
+          <!-- Pills content -->
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+              <form>
+
+                <!-- Email input -->
+                <div class="form-outline">
+                  <input type="text" id="fullname" class="form-control form-control-lg" />
+                  <label class="form-label" for="fullname">Fullname</label>
+                </div>
+
+            </div>
+            <div class="col-md-6 mb-4">
+
+              <div class="form-outline">
+                <input type="text" id="lastName" class="form-control form-control-lg" />
+                <label class="form-label" for="lastName">Reg. No</label>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-4 d-flex align-items-center">
+
+              <div class="form-outline datepicker w-100">
+                <input type="text" class="form-control form-control-lg" id="rollno" />
+                <label for="birthdayDate" class="form-label">Roll no</label>
+              </div>
+
+            </div>
+            <div class="col-md-6 mb-4">
+
+              <h6 class="mb-2 pb-1">Gender: </h6>
+
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender" value="option1"
+                  checked />
+                <label class="form-check-label" for="femaleGender">Female</label>
+              </div>
+
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
+                  value="option2" />
+                <label class="form-check-label" for="maleGender">Male</label>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-4 pb-2">
+
+              <div class="form-outline">
+                <input type="text" id="emailAddress" class="form-control form-control-lg" />
+                <label class="form-label" for="emailAddress">Item</label>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-outline">
+                <input type="text" id="emailAddress" class="form-control form-control-lg" />
+                <label class="form-label" for="emailAddress">member</label>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-outline">
+                <input type="text" id="emailAddress" class="form-control form-control-lg" />
+                <label class="form-label" for="emailAddress">memeber</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-outline">
+                <input type="text" id="emailAddress" class="form-control form-control-lg" />
+                <label class="form-label" for="emailAddress">member</label>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-outline">
+                <input type="text" id="emailAddress" class="form-control form-control-lg" />
+                <label class="form-label" for="emailAddress">memeber</label>
+              </div>
+            </div>
+          </div>
+<div class="row">
+            <div class="col-6">
+              <div class="form-outline">
+                <input type="text" id="emailAddress" class="form-control form-control-lg" />
+                <label class="form-label" for="emailAddress">member</label>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-outline">
+                <input type="text" id="emailAddress" class="form-control form-control-lg" />
+                <label class="form-label" for="emailAddress">memeber</label>
+              </div>
+            </div>
+          </div>
+<div class="row">
+            <div class="col-6">
+              <div class="form-outline">
+                <input type="text" id="emailAddress" class="form-control form-control-lg" />
+                <label class="form-label" for="emailAddress">member</label>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-outline">
+                <input type="text" id="emailAddress" class="form-control form-control-lg" />
+                <label class="form-label" for="emailAddress">memeber</label>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-6">
+              <label class="form-label select-label">Class</label>
+
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Class</option>
+                <option value="1">CS1</option>
+                <option value="2">CS2</option>
+                <option value="3">CS3</option>
+              </select>
+
+
+            </div>
+          </div>
+
+
+
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
+
+          </form>
+      </div>
+      <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
+
+      </div>
+    </div>
+    <!-- Pills content -->
+
+
+
+
+
+    </section>
   </div>
+  </div>
+
+
+
+  <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+    <hr class="my-5 " />
+    <h3>Application list</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Sl no</th>
+          <th scope="col">Name</th>
+          <th scope="col">Reg no</th>
+          <th scope="col">Item</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Ajeesh</td>
+          <td>123</td>
+          <td>Solo dance</td>
+          <td>pending</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>PR</td>
+          <td>456</td>
+          <td>solo song</td>
+          <td>Approved</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td colspan="2">Larry the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+  </div>
+  <div class="container pt-4">
+    <hr class="my-5 " />
+  </div>
+
+
+
 </main>
 <!--Main layout-->
 
 
-
+{{!-- styles for dashboard --}}
 <style>
-    body {
-  background-color: #fbfbfb;
-}
-@media (min-width: 991.98px) {
-  main {
-    padding-left: 240px;
+  body {
+    background-color: #fbfbfb;
   }
-}
 
-/* Sidebar */
-.sidebar {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  padding: 58px 0 0; /* Height of navbar */
-  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
-  width: 240px;
-  z-index: 600;
-}
+  @media (min-width: 991.98px) {
+    main {
+      padding-left: 240px;
+    }
+  }
 
-@media (max-width: 991.98px) {
+  /* Sidebar */
   .sidebar {
-    width: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 58px 0 0;
+    /* Height of navbar */
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+    width: 240px;
+    z-index: 600;
   }
-}
-.sidebar .active {
-  border-radius: 5px;
-  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-}
-.fa-user-circle{
-  font-size: 25px;
-  color: #fff;
-}
-.sidebar-sticky {
-  position: relative;
-  top: 0;
-  height: calc(100vh - 48px);
-  padding-top: 0.5rem;
-  overflow-x: hidden;
-  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-}
+
+  @media (max-width: 991.98px) {
+    .sidebar {
+      width: 100%;
+    }
+  }
+
+  .sidebar .active {
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  }
+
+  .fa-user-circle {
+    font-size: 25px;
+    color: #fff;
+  }
+
+  .sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: 0.5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Scrollable contents if viewport is shorter than content. */
+  }
+
+  * {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  a {
+    color: #00B7FF;
+  }
+
+  .navbar .nav-link {
+    color: #fff !important;
+  }
+
+  li {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+  }
+
+  .about-img {
+    width: 350px;
+  }
 </style>
