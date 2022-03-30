@@ -6,9 +6,9 @@ var logger = require('morgan');
 
 var { connect, get } = require("./config/connection") ;
 
-// connect((err) => {
-//    err ? console.log("Database error :" ,err) : console.log("Database connected successfully") ;
-// })
+connect((err) => {
+   err ? console.log("Database error :" ,err) : console.log("Database connected successfully") ;
+})
 
 //Defining Routers of diffrent users
 
