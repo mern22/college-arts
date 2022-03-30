@@ -7,7 +7,7 @@ const state = {
 const connect = (done) => {
 
     const url = "mongodb://localhost:27017/"
-    const dbname = "collegearts"
+    const dbname = "asterica"
 
     MongoClient.connect( url, (err, data) => {
 
