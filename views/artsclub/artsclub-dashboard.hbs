@@ -68,89 +68,39 @@
     <div class="tab-pane fade show active p-1" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
       <section class="text-center mt-2  container">
 
-        <h2 class="mt-5"> Students List</h2>
-        <table class="table align-middle mb-0 bg-white">
-          <thead class="bg-light">
-            <tr>
-              <th>Name</th>
-              <th>Register No</th>
-              <th>Email</th>
-              <th>Phone No</th>
-              <th>Class</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <div class="d-flex align-items-center">
-                  <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px"
-                    class="rounded-circle" />
-                  <div class="ms-3">
-                    <p class="fw-bold mb-1">John Doe</p>
-                    <p class="text-muted mb-0">john.doe@gmail.com</p>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <p class="fw-normal mb-1">Software engineer</p>
-                <p class="text-muted mb-0">IT department</p>
-              </td>
-              <td>
-                <span class="badge badge-success rounded-pill d-inline">Active</span>
-              </td>
-              <td>Senior</td>
-              <td>
-                <p class="fw-normal mb-1">Cs6</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="d-flex align-items-center">
-                  <img src="https://mdbootstrap.com/img/new/avatars/6.jpg" class="rounded-circle" alt=""
-                    style="width: 45px; height: 45px" />
-                  <div class="ms-3">
-                    <p class="fw-bold mb-1">Alex Ray</p>
-                    <p class="text-muted mb-0">alex.ray@gmail.com</p>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <p class="fw-normal mb-1">Consultant</p>
-                <p class="text-muted mb-0">Finance</p>
-              </td>
-              <td>
-                <span class="badge badge-primary rounded-pill d-inline">Onboarding</span>
-              </td>
-              <td>Junior</td>
-              <td>
-                <p class="fw-normal mb-1">Cs4</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="d-flex align-items-center">
-                  <img src="https://mdbootstrap.com/img/new/avatars/7.jpg" class="rounded-circle" alt=""
-                    style="width: 45px; height: 45px" />
-                  <div class="ms-3">
-                    <p class="fw-bold mb-1">Kate Hunington</p>
-                    <p class="text-muted mb-0">kate.hunington@gmail.com</p>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <p class="fw-normal mb-1">Designer</p>
-                <p class="text-muted mb-0">UI/UX</p>
-              </td>
-              <td>
-                <span class="badge badge-warning rounded-pill d-inline">Awaiting</span>
-              </td>
-              <td>Senior</td>
-              <td>
-                <p class="fw-normal mb-1">Cs2</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <h3 class="my-5">All students List</h3>
+        <div class="container">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Reg no</th>
+                <th scope="col">Phone</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry the Bird</td>
+                <td>sdfffat</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
 
 
@@ -160,7 +110,7 @@
     <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
       <hr class="my-5 " />
       <section id="participants" class="container">
-        <h2 class="text-center"> Participant list</h2>
+        <h2 class="text-center">Participant list</h2>
 
         <ul class="nav nav-pills mb-3" id="pills-tab2" role="tablist">
           <li class="nav-item" role="presentation">
@@ -175,131 +125,48 @@
               GROUP
             </button>
           </li>
-          {{!-- <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-contact-tab2" data-mdb-toggle="pill" data-mdb-target="#pills-contact2"
-              type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
-              Contact
-            </button>
-          </li> --}}
         </ul>
         {{!-- solo item pills --}}
         <div class="tab-content" id="pills-tabContent2">
           <div class="tab-pane fade show active" id="pills-home2" role="tabpanel" aria-labelledby="pills-home-tab2">
 
             {{!-- Solo item table --}}
-            <table class="table align-middle mb-0 bg-white">
-              <thead class="bg-light">
+            <div class="container">
+              <table class="table">
+              <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Register No</th>
-                  <th>Status</th>
-                  <th>Details</th>
-                  <th>Verify</th>
+                  <th scope="col">No</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Reg no</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Details</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px"
-                        class="rounded-circle" />
-                      <div class="ms-3">
-                        <p class="fw-bold mb-1">AKHIL P R</p>
-                        <p class="text-muted mb-0">akhilpr404@gmail.com</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <p class="fw-normal mb-1">19130623</p>
-                    {{!-- <p class="text-muted mb-0">IT department</p> --}}
-                  </td>
-                  <td>
-                    <span class="badge badge-success rounded-pill d-inline">Active</span>
-                  </td>
-                  <td>
-                    <button type="button" class="btn btn-primary btn-rounded">View</button>
-                  </td>
-                  <td>
-                    <button type="button" class="btn btn-success btn-rounded">Verify</button>
-                  </td>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td><span class="badge badge-pill badge-success">Success</span></td>
+                  <td><button type="button" class="btn btn-primary btn-rounded">View</button></td>
                 </tr>
                 <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img src="https://mdbootstrap.com/img/new/avatars/6.jpg" class="rounded-circle" alt=""
-                        style="width: 45px; height: 45px" />
-                      <div class="ms-3">
-                        <p class="fw-bold mb-1">Ajeeeeeeeeesh C P</p>
-                        <p class="text-muted mb-0">ajeeeshcp@gmail.com</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <p class="fw-normal mb-1">19130620</p>
-
-                  </td>
-                  <td>
-                    <span class="badge badge-primary rounded-pill d-inline">Onboarding</span>
-                  </td>
-                  <td>
-                    <button type="button" class="btn btn-primary btn-rounded">View</button>
-                  </td>
-                  <td>
-                    <button type="button" class="btn btn-success btn-rounded">Verify</button>
-                  </td>
-                  </td>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td><span class="badge badge-pill badge-success">Success</span></td>
+                  <td><button type="button" class="btn btn-primary btn-rounded">View</button></td>
                 </tr>
                 <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img src="https://mdbootstrap.com/img/new/avatars/7.jpg" class="rounded-circle" alt=""
-                        style="width: 45px; height: 45px" />
-                      <div class="ms-3">
-                        <p class="fw-bold mb-1">Athu</p>
-                        <p class="text-muted mb-0">mridu@gmail.com</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <p class="fw-normal mb-1">191306**</p>
-                  </td>
-                  <td>
-                    <span class="badge badge-warning rounded-pill d-inline">Awaiting</span>
-                  </td>
-                  <td>
-                    <button type="button" class="btn btn-primary btn-rounded">View</button>
-                  </td>
-                  <td>
-                    <button type="button" class="btn btn-success btn-rounded">Verify</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img src="https://mdbootstrap.com/img/new/avatars/7.jpg" class="rounded-circle" alt=""
-                        style="width: 45px; height: 45px" />
-                      <div class="ms-3">
-                        <p class="fw-bold mb-1">Athu</p>
-                        <p class="text-muted mb-0">mridu@gmail.com</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <p class="fw-normal mb-1">Designer</p>
-                    <p class="text-muted mb-0">UI/UX</p>
-                  </td>
-                  <td>
-                    <span class="badge badge-warning rounded-pill d-inline">Awaiting</span>
-                  </td>
-                  <td>
-                    <button type="button" class="btn btn-primary btn-rounded">View</button>
-                  </td>
-                  <td>
-                    <button type="button" class="btn btn-success btn-rounded">Verify</button>
-                  </td>
+                  <th scope="row">3</th>
+                  <td>Larry the Bird</td>
+                  <td>@twitter</td>
+                  <td><span class="badge badge-pill badge-success">Success</span></td>
+                  <td><button type="button" class="btn btn-primary btn-rounded">View</button></td>
                 </tr>
               </tbody>
             </table>
+            </div>
             {{!-- solo item table ends --}}
 
 
@@ -311,192 +178,42 @@
           <div class="tab-pane fade" id="pills-profile2" role="tabpanel" aria-labelledby="pills-profile-tab2">
 
             {{!-- group Table --}}
-            <table class="table align-middle mb-0 bg-white">
-              <thead class="bg-light">
+            <div class="container">
+              <table class="table">
+              <thead>
                 <tr>
-                  <th>Group Leader</th>
-                  <th>Register No</th>
-                  <th>Item</th>
-                  <th>Status</th>
-                  <th>Details</th>
-                  <th>Verify</th>
+                  <th scope="col">No</th>
+                  <th scope="col">Group Leader</th>
+                  <th scope="col">Item</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Details</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px"
-                        class="rounded-circle" />
-                      <div class="ms-3">
-                        <p class="fw-bold mb-1">AKHIL P R</p>
-                        <p class="text-muted mb-0">akhilpr404@gmail.com</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <p class="fw-normal mb-1">19130623</p>
-                    {{!-- <p class="text-muted mb-0">IT department</p> --}}
-                  </td>
-                  <td>
-                    <p class="fw-normal mb-1">Margamkali</p>
-                    {{!-- <p class="text-muted mb-0">IT department</p> --}}
-                  </td>
-                  <td>
-                    <span class="badge badge-success rounded-pill d-inline">Margam kali</span>
-                  </td>
-                  <td>
-                    <button type="button" class="btn btn-primary btn-rounded">View</button>
-                  <td>
-                    <button type="button" class="btn btn-success btn-rounded">Verify</button>
-                  </td>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td><span class="badge badge-pill badge-success">Success</span></td>
+                  <td><button type="button" class="btn btn-primary btn-rounded">View</button></td>
                 </tr>
                 <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img src="https://mdbootstrap.com/img/new/avatars/6.jpg" class="rounded-circle" alt=""
-                        style="width: 45px; height: 45px" />
-                      <div class="ms-3">
-                        <p class="fw-bold mb-1">Ajeeeeeeeeesh C P</p>
-                        <p class="text-muted mb-0">ajeeeshcp@gmail.com</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <p class="fw-normal mb-1">19130620</p>
-                  </td>
-                   <td>
-                    <p class="fw-normal mb-1">Mohiniyattam</p>
-                    {{!-- <p class="text-muted mb-0">IT department</p> --}}
-                  </td>
-                  <td>
-                    <span class="badge badge-primary rounded-pill d-inline">Kuchupudi</span>
-                  </td>
-                  <td>
-                    <button type="button" class="btn btn-primary" data-mdb-toggle="modal"
-                      data-mdb-target="#exampleModal">
-                      View
-                    </button>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                      aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Details</h5>
-                            <button type="button" class="btn-close" data-mdb-dismiss="modal"
-                              aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            <h5>Group Leader : AKHIL P R</h5>
-                            <h5>Team Members</h5>
-                            <h6>AJEESH CP 19130640</h6>
-                            <h6>AKHIL C 19130645</h6>
-                            <h6>SHABEEB P K B 19450630</h6>
-                            <h6>ATHUL KRISHNAN B 19530630</h6>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">OK</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <button type="button" class="btn btn-success btn-rounded">Verify</button>
-                  </td>
-                  </td>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td><span class="badge badge-pill badge-success">Success</span></td>
+                  <td><button type="button" class="btn btn-primary btn-rounded">View</button></td>
                 </tr>
                 <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img src="https://mdbootstrap.com/img/new/avatars/7.jpg" class="rounded-circle" alt=""
-                        style="width: 45px; height: 45px" />
-                      <div class="ms-3">
-                        <p class="fw-bold mb-1">Athu</p>
-                        <p class="text-muted mb-0">mridu@gmail.com</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <p class="fw-normal mb-1">191306**</p>
-                  </td>
-                   <td>
-                    <p class="fw-normal mb-1">Break Dance</p>
-                    {{!-- <p class="text-muted mb-0">IT department</p> --}}
-                  </td>
-                  <td>
-                    <span class="badge badge-warning rounded-pill d-inline">Mohiniyattam</span>
-                  </td>
-                  <td>
-                    <button type="button" class="btn btn-primary" data-mdb-toggle="modal"
-                      data-mdb-target="#exampleModal">
-                      View
-                    </button>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                      aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Details</h5>
-                            <button type="button" class="btn-close" data-mdb-dismiss="modal"
-                              aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            <h5>Group Leader : AKHIL P R</h5>
-                            <h5>Team Members</h5>
-                            <h6>AJEESH CP 19130640</h6>
-                            <h6>AKHIL C 19130645</h6>
-                            <h6>SHABEEB P K B 19450630</h6>
-                            <h6>ATHUL KRISHNAN B 19530630</h6>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">OK</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <button type="button" class="btn btn-success btn-rounded">Verify</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img src="https://mdbootstrap.com/img/new/avatars/7.jpg" class="rounded-circle" alt=""
-                        style="width: 45px; height: 45px" />
-                      <div class="ms-3">
-                        <p class="fw-bold mb-1">Athu</p>
-                        <p class="text-muted mb-0">mridu@gmail.com</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <p class="fw-normal mb-1">Designer</p>
-                    <p class="text-muted mb-0">UI/UX</p>
-                  </td>
-                   <td>
-                    <p class="fw-normal mb-1">Oppana</p>
-                    {{!-- <p class="text-muted mb-0">IT department</p> --}}
-                  </td>
-                  <td>
-                    <span class="badge badge-warning rounded-pill d-inline">Awaiting</span>
-                  </td>
-                  <td>Senior</td>
-                  <td>
-                    <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold" data-mdb-ripple-color="dark">
-                      View
-                    </button>
-                  </td>
+                  <th scope="row">3</th>
+                  <td>Larry the Bird</td>
+                  <td>@twitter</td>
+                  <td><span class="badge badge-pill badge-success">Success</span></td>
+                  <td><button type="button" class="btn btn-primary btn-rounded">View</button></td>
                 </tr>
               </tbody>
             </table>
+            </div>
             {{!-- end of roup table --}}
           </div>
           {{!-- <div class="tab-pane fade" id="pills-contact2" role="tabpanel" aria-labelledby="pills-contact-tab2">

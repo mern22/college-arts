@@ -17,7 +17,7 @@ router.get('/dashboard', function(req, res, next) {
   res.render('student/student-dashboard',{ showheader:false });
 });
 
-router.get('/application-form', function(req, res, next) {
+router.get('/ ', function(req, res, next) {
   res.render('student/student-applicationform');
 });
 

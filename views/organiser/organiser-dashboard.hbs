@@ -5,42 +5,16 @@
     <div class="position-sticky">
       <div class="list-group list-group-flush mx-3 mt-4 py-3" id="list-tab" role="tablist">
 
-       <a
-        class="list-group-item list-group-item-action active py-3"
-        id="list-home-list"
-        data-mdb-toggle="list"
-        href="#list-home"
-        role="tab"
-        aria-controls="list-home"
-        ><i class="fas fa-tachometer-alt me-2"></i> Dashboard</a
-      >
-      <a
-        class="list-group-item list-group-item-action py-3"
-        id="list-profile-list"
-        data-mdb-toggle="list"
-        href="#list-profile"
-        role="tab"
-        aria-controls="list-profile"
-        ><i class="fas fa-users me-2"></i>Participants</a
-      >
-      <a
-        class="list-group-item list-group-item-action py-3"
-        id="list-messages-list"
-        data-mdb-toggle="list"
-        href="#list-messages"
-        role="tab"
-        aria-controls="list-messages"
-        ><i class="fas fa-user-graduate me-2"></i> Judges</a
-      >
-      <a
-        class="list-group-item list-group-item-action py-3"
-        id="list-settings-list"
-        data-mdb-toggle="list"
-        href="#list-settings"
-        role="tab"
-        aria-controls="list-settings"
-        ><i class="fas fa-home me-2"></i> Stages</a
-      >
+        <a class="list-group-item list-group-item-action active py-3" id="list-home-list" data-mdb-toggle="list"
+          href="#list-home" role="tab" aria-controls="list-home"><i class="fas fa-tachometer-alt me-2"></i>
+          Dashboard</a>
+        <a class="list-group-item list-group-item-action py-3" id="list-profile-list" data-mdb-toggle="list"
+          href="#list-profile" role="tab" aria-controls="list-profile"><i class="fas fa-users me-2"></i>Participants</a>
+        <a class="list-group-item list-group-item-action py-3" id="list-messages-list" data-mdb-toggle="list"
+          href="#list-messages" role="tab" aria-controls="list-messages"><i class="fas fa-user-graduate me-2"></i>
+          Judges</a>
+        <a class="list-group-item list-group-item-action py-3" id="list-settings-list" data-mdb-toggle="list"
+          href="#list-settings" role="tab" aria-controls="list-settings"><i class="fas fa-home me-2"></i> Stages</a>
 
       </div>
     </div>
@@ -75,7 +49,7 @@
             <i class="fas fa-user-circle"></i>
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-            
+
             <li>
               <a class="dropdown-item" href="#">Logout</a>
             </li>
@@ -92,83 +66,35 @@
 <!--Main layout-->
 <main style="margin-top: 70px;">
   <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">   
-       <section class="text-center mt-2 container">
+    <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+      <section class="text-center mt-2 container">
 
-      <div class="row py-4">
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Event Details</h5>
-              <p class="card-text">Click on Add details to send messgaes about the events</p>
-              <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-                Click Here
-              </button>
+        <div class="row py-4">
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Add Post</h5>
+                <p class="card-text">Click on Add Post to see the messgaes about events</p>
+                <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                  Click Here
+                </button>
 
-              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Program Details</h5>
-                      <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-                    </div>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Post Details</h5>
+                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                      </div>
                       <form action="">
-                        
-                          <div class="modal-body">
-                            <div class="my-2">
-                              <input type="text" id="typeText" placeholder="Title" class="form-control" />
-                            </div>
-                            <div class=" mb-4">
-                              <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
-                            </div>
-                            <div>
-                              <input type="file" class="form-control" id="customFile" />
-                            </div>
 
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-success">Save</button>
-                          </div>
-
-                      </form>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Notifications</h5>
-              <p class="card-text">Send Notifications or other information to students</p>
-              <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal2">
-                Click here
-              </button>
-              <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Notifications</h5>
-                      <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-                    </div>
-
-                   <form action="">
-                          <div class="modal-body">
-
+                        <div class="modal-body">
                           <div class="my-2">
                             <input type="text" id="typeText" placeholder="Title" class="form-control" />
                           </div>
                           <div class=" mb-4">
                             <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
-                          </div>
-                          <div>
-                            <input type="file" class="form-control" id="customFile" />
                           </div>
 
                         </div>
@@ -176,82 +102,121 @@
                           <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">Close</button>
                           <button type="submit" class="btn btn-success">Save</button>
                         </div>
-                   </form>
 
+                      </form>
+                    </div>
                   </div>
                 </div>
+
               </div>
-
-
             </div>
           </div>
+
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Notice board</h5>
+                <p class="card-text">Send Notifications or other information to students</p>
+                <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal2">
+                  Click here
+                </button>
+                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Notifications</h5>
+                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                      </div>
+
+                      <form action="">
+                        <div class="modal-body">
+                          <div class=" mb-4">
+                            <textarea class="form-control" placeholder="Messages" id="textAreaExample"
+                              rows="4"></textarea>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-success">Save</button>
+                        </div>
+                      </form>
+
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+
         </div>
+      </section>
+    </div>
 
-      </div>
-        </section>
-      </div>
+    <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+      <hr class="my-5 " />
+      <section id="participants" class="container">
+        <h3 class="my-5 text-center">Participating Students</h3>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Name</th>
+              <th scope="col">Item</th>
+              <th scope="col">Stage</th>
+              <th scope="col">Day</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>548421</td>
+              <td>1</td>
 
-      <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
-            <hr class="my-5 " />
-            <section id="participants" class="container">
-              <h3 class="my-5 text-center">Participating Students</h3>
-              <table class="table table-bordered">
-                <thead>
-                  <tr>
-                    <th scope="col">No</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Item</th>
-                    <th scope="col">Stage</th>
-                    <th scope="col">Day</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>548421</td>
-                    <td>1</td>
-                    
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>874512</td>
-                    <td>1</td>
-                  
-                  </tr>
-                </tbody>
-              </table>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>874512</td>
+              <td>1</td>
 
-            </section>
-      </div>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+    </div>
 
 
-      <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
-         <hr class="my-5 " />
-        <section id="judges" class="container">
-          <h3 class="my-5 ">Add Judges</h3>
-          <div class="mb-3">
-            <button class="btn btn-primary add-one ">Add judges</button>
-           <!-- Button trigger modal -->
+    <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+      <hr class="my-5 " />
+      <section id="judges" class="container">
+        <h3 class="my-5 ">Add Judges</h3>
+        <div class="mb-3">
+          <button class="btn btn-primary add-one ">Add judges</button>
+          <!-- Button trigger modal -->
           <button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#exampleModal3">
             Delete judge
           </button>
-          </div>
+        </div>
 
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Remove Judge</h5>
-                  <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <form action="">
-                  <div class="modal-body">
-                   <div class="form-outline mb-4">
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Remove Judge</h5>
+                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <form action="">
+                <div class="modal-body">
+                  <div class="form-outline mb-4">
                     <input type="text" id="form1Example1" class="form-control" />
                     <label class="form-label" for="form1Example1">Username</label>
                   </div>
@@ -260,179 +225,211 @@
                   <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
                   <button type="submit" class="btn btn-danger">Remove</button>
                 </div>
-                </form>
-              </div>
+              </form>
             </div>
           </div>
+        </div>
 
 
-          <div class="form-group dynamic-element" style="display:none">
-            <div class="row">
-              <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseOne"
-                      aria-expanded="true" aria-controls="collapseOne">
-                      Judge
-                    </button>
-                  </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                    data-mdb-parent="#accordionExample">
-                    <div class="accordion-body">
+        <div class="form-group dynamic-element" style="display:none">
+          <div class="row">
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-mdb-toggle="collapse"
+                    data-mdb-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Judge
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                  data-mdb-parent="#accordionExample">
+                  <div class="accordion-body">
 
 
-                      <form class="container">
+                    <form class="container">
 
-                        <div class="row">
-                          <div class="form-group col-md-6">
-                            <label for="inputState">Day</label>
-                            <select id="inputState" class="form-control">
-                              <option selected>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
+                      <div class="row">
+                        <div class="form-group col-md-6">
+                          <label for="inputState">Day</label>
+                          <select id="inputState" class="form-control">
+                            <option selected>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
 
-                            </select>
-                          </div>
-                          <div class="form-group col-md-6">
-                            <label for="inputState">Stage</label>
-                            <select id="inputState" class="form-control">
-                              <option selected>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-
-                            </select>
-                          </div>
+                          </select>
                         </div>
-                        <div class="row mt-2">
-                          <div class="form-group col-md-6">
-                            <label for="inputAddress">Name</label>
-                            <input type="text" class="form-control" id="inputAddress">
-                          </div>
-                          <div class="form-group col-md-6">
-                            <label for="inputAddress2">Username</label>
-                            <input type="text" class="form-control" id="inputAddress2">
-                          </div>
+                        <div class="form-group col-md-6">
+                          <label for="inputState">Stage</label>
+                          <select id="inputState" class="form-control">
+                            <option selected>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+
+                          </select>
                         </div>
-                        <div class="row mt-2">
-                          <div class="form-group col-md-6">
-                            <label for="inputCity">Password</label>
-                            <input type="password" class="form-control" id="inputCity">
-                          </div>
-                          <div class="form-group col-md-6">
-                            <label for="inputCity">Confirm Password</label>
-                            <input type="password" class="form-control" id="inputCity">
-                          </div>
-
+                      </div>
+                      <div class="row mt-2">
+                        <div class="form-group col-md-6">
+                          <label for="inputAddress">Name</label>
+                          <input type="text" class="form-control" id="inputAddress">
                         </div>
-                        <button type="submit" class="mt-3 btn btn-primary">Save</button>
+                        <div class="form-group col-md-6">
+                          <label for="inputAddress2">Username</label>
+                          <input type="text" class="form-control" id="inputAddress2">
+                        </div>
+                      </div>
+                      <div class="row mt-2">
+                        <div class="form-group col-md-6">
+                          <label for="inputCity">Password</label>
+                          <input type="password" class="form-control" id="inputCity">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="inputCity">Item</label>
+                          <input type="text" class="form-control">
+                        </div>
 
-                      </form>
+                      </div>
+                      <button type="submit" class="mt-3 btn btn-primary">Submit</button>
+
+                    </form>
 
 
 
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- End of fields-->
-            <div class="col-md-1 my-1">
-              <button class="btn btn-danger delete">Delete</button>
-            </div>
           </div>
-          <div class="dynamic-stuff">
-            <!-- Dynamic element will be cloned here -->
-            <!-- You can call clone function once if you want it to show it a first element-->
+          <!-- End of fields-->
+          <div class="col-md-1 my-1">
+            <button class="btn btn-danger delete">Delete</button>
           </div>
+        </div>
+        <div class="dynamic-stuff">
+          <!-- Dynamic element will be cloned here -->
+          <!-- You can call clone function once if you want it to show it a first element-->
+        </div>
 
 
 
 
-        </section>
-      </div>
-
-      <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
-          <hr class="my-5 " />
-          <section id="stages">
-            <div class="container my-5">
-              <h3 class="mb-3 text-center">Stages Information</h3>
-
-              <form action="" method="post">
-
-                <div class="form-group col-md-4 d-flex">
-                  <select id="inputState" class="form-control">
-                    <option selected>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                  </select>
-                  <button type="submit" class="btn btn-outline-primary mx-3" data-mdb-ripple-color="dark">Search</button>
-                </div>
-
-              </form>
-
-              <table class="table table-bordered">
-                    <h5 class="text-primary my-4">Judges Information</h5>
-                  <thead>
-                    <tr>
-                      <th scope="col">No</th>
-                      <th scope="col">Judge</th>
-                      <th scope="col">Username</th>
-                      <th scope="col">Password</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>548421</td>
-                      
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                      <td>874512</td>
-                    
-                    </tr>
-                  </tbody>
-              </table>
-
-              <table class="table table-bordered">
-                    <h5 class="text-primary my-4">Participants Information</h5>
-                  <thead>
-                    <tr>
-                      <th scope="col">No</th>
-                      <th scope="col">Student</th>
-                      <th scope="col">Item</th>
-                      <th scope="col">Chest number</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>548421</td>
-                      
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                      <td>874512</td>
-                    
-                    </tr>
-                  </tbody>
-              </table>
-            </div>
-          </section>
-      </div>
-
+      </section>
     </div>
+
+    <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+      <hr class="my-5 " />
+      <div class="container">
+        <h3 class="mb-3 text-center">Stages Information</h3>
+
+        <ul class="nav nav-pills mb-3" id="pills-tab2" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-home-tab2" data-mdb-toggle="pill" data-mdb-target="#pills-home2"
+              type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+              Judges
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-profile-tab2" data-mdb-toggle="pill" data-mdb-target="#pills-profile2"
+              type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+              Students
+            </button>
+          </li>
+        </ul>
+        {{!-- solo item pills --}}
+        <div class="tab-content" id="pills-tabContent2">
+          <div class="tab-pane fade show active" id="pills-home2" role="tabpanel" aria-labelledby="pills-home-tab2">
+
+            {{!-- Solo item table --}}
+            <div class="container">
+              <table class="table table-bordered">
+                <h5 class="text-primary my-4">Judges Information</h5>
+                <thead>
+                  <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Judge</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Item</th>
+                    <th scope="col">Stage</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>548421</td>
+                    <td>Mark</td>
+                    <td>1</td>
+
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>874512</td>
+                    <td>Mark</td>
+                    <td>2</td>
+
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            {{!-- solo item table ends --}}
+
+
+
+
+
+          </div>
+          {{!-- group pills --}}
+          <div class="tab-pane fade" id="pills-profile2" role="tabpanel" aria-labelledby="pills-profile-tab2">
+
+            {{!-- group Table --}}
+            <table class="table table-bordered">
+              <h5 class="text-primary my-4">Participants Information</h5>
+              <thead>
+                <tr>
+                  <th scope="col">No</th>
+                  <th scope="col">Student</th>
+                  <th scope="col">Item</th>
+                  <th scope="col">Stage</th>
+                  <th scope="col">Chest number</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>2</td>
+                  <td>2522</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>2</td>
+                  <td>874512</td>
+
+                </tr>
+              </tbody>
+            </table>
+            {{!-- end of roup table --}}
+          </div>
+          {{!-- <div class="tab-pane fade" id="pills-contact2" role="tabpanel" aria-labelledby="pills-contact-tab2">
+            Tab 3 content
+          </div> --}}
+        </div>
+      </div>
+    </div>
+
+  </div>
   <div class="container pt-4">
     <hr class="my-5 " />
   </div>
@@ -493,29 +490,31 @@
     overflow-y: auto;
     /* Scrollable contents if viewport is shorter than content. */
   }
-  *{
-  font-family: 'Poppins', sans-serif;
-}
 
-html{
-  scroll-behavior: smooth;
-}
+  * {
+    font-family: 'Poppins', sans-serif;
+  }
 
-a {
-  color: #00B7FF;
-}
+  html {
+    scroll-behavior: smooth;
+  }
 
-.navbar .nav-link {
-  color: #fff !important;
-}
-li{
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-}
-.about-img{
-  width: 350px;
-}
+  a {
+    color: #00B7FF;
+  }
 
+  .navbar .nav-link {
+    color: #fff !important;
+  }
+
+  li {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+  }
+
+  .about-img {
+    width: 350px;
+  }
 </style>
 
 {{!-- script for dynamic form --}}
