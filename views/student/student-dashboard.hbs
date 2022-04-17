@@ -8,10 +8,13 @@
           href="#list-home" role="tab" aria-controls="list-home"><i class="fas fa-tachometer-alt me-3"></i> Dashboard
         </a>
         <a class="list-group-item list-group-item-action py-3" id="list-profile-list" data-mdb-toggle="list"
-          href="#list-profile" role="tab" aria-controls="list-profile"><i class="fas fa-plus-square me-3"></i>Application</a>
+          href="#list-profile" role="tab" aria-controls="list-profile"><i class="fas fa-plus-square me-3"></i>New Application</a>
         <a class="list-group-item list-group-item-action py-3" id="list-messages-list" data-mdb-toggle="list"
           href="#list-messages" role="tab" aria-controls="list-messages"><i class="fas fa-file me-3"></i>My
           Applicatons</a>
+        <a class="list-group-item list-group-item-action py-3" id="list-verified-list" data-mdb-toggle="list"
+          href="#list-verified" role="tab" aria-controls="list-verified"><i class="fas fa-check-square me-3"></i>
+          Verified</a>
         <a class="list-group-item list-group-item-action py-3" id="list-settings-list" data-mdb-toggle="list"
           href="#list-settings" role="tab" aria-controls="list-settings"><i class="fas fa-certificate me-3"></i>
           Certificates</a>
@@ -49,9 +52,11 @@
             <i class="fas fa-user-circle"></i>
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-
             <li>
-              <a class="dropdown-item" href="#">Logout</a>
+              <a class="dropdown-item" href="/dashboard"><i class="me-3 fas fa-user"></i>{{student.name}}</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/logout"><i class="me-3 fas fa-sign-out-alt"></i>Logout</a>
             </li>
           </ul>
         </li>
@@ -77,8 +82,9 @@
               <div class="card-body text-center">
                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
                   class="rounded-circle img-fluid" style="width: 150px;">
-                <h5 class="my-3">Athul krishnan.B</h5>
-                <p class="text-muted mb-1">19130636</p>
+                <h5 class="my-3">{{student.name}}</h5>
+                <p class="text-muted mb-1">{{student.registerno}}</p>
+                <p class="text-muted mb-1">Dept : {{student.department}}</p>
               </div>
             </div>
 
@@ -91,7 +97,7 @@
                     <p class="mb-0">Full Name</p>
                   </div>
                   <div class="col-sm-9">
-                    <p class="text-muted mb-0">Athul krishnan.B</p>
+                    <p class="text-muted mb-0">{{student.name}}</p>
                   </div>
                 </div>
                 <hr>
@@ -100,7 +106,7 @@
                     <p class="mb-0">Email</p>
                   </div>
                   <div class="col-sm-9">
-                    <p class="text-muted mb-0">athulkrishnan780@gmail.com</p>
+                    <p class="text-muted mb-0">{{student.email}}</p>
                   </div>
                 </div>
                 <hr>
@@ -109,7 +115,7 @@
                     <p class="mb-0">Phone</p>
                   </div>
                   <div class="col-sm-9">
-                    <p class="text-muted mb-0">7034123854</p>
+                    <p class="text-muted mb-0">{{student.phoneno}}</p>
                   </div>
                 </div>
                 <hr>
@@ -118,7 +124,26 @@
                     <p class="mb-0">Class</p>
                   </div>
                   <div class="col-sm-9">
-                    <p class="text-muted mb-0">CS 1</p>
+                    <p class="text-muted mb-0">{{student.class}}</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Roll no</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{student.rollno}}</p>
+                  </div>
+                </div>
+                <hr>
+                
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Gender</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{student.gender}}</p>
                   </div>
                 </div>
               </div>
@@ -154,22 +179,21 @@
         <!-- Pills content -->
         <div class="tab-content">
           <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-            <form >
 
-
+            <form action="/application" method="post">
 
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="py-4">
                 <div class="row mb-4">
                 <div class="col">
                   <div class="form-outline">
-                    <input type="text" required id="form3Example1" class="form-control" />
+                    <input type="text" name="name" required id="form3Example1" class="form-control" />
                     <label class="form-label" for="form3Example1">Full name</label>
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-outline">
-                    <input type="text" required id="form3Example2" class="form-control" />
+                    <input type="text" name="regno" required id="form3Example2" class="form-control" />
                     <label class="form-label" for="form3Example2">Register number</label>
                   </div>
                 </div>
@@ -177,26 +201,43 @@
               <div class="row mb-4">
                 <div class="col">
                   <div class="form-outline">
-                    <input type="text" required id="form3Example1" class="form-control" />
+                    <input type="text" name="phoneno" required id="form3Example1" class="form-control" />
                     <label class="form-label" for="form3Example1">Phone number</label>
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-outline">
-                    <input type="text" required id="form3Example2" class="form-control" />
+                    <input type="text" name="item" required id="form3Example2" class="form-control" />
                     <label class="form-label" for="form3Example2">Item</label>
                   </div>
                 </div>
               </div>
               <div class="row mb-4">
-                <div class="col">
-                  <div class="form-outline">
-                    <input type="text" required id="form3Example1" class="form-control" />
-                    <label class="form-label" for="form3Example1">Class</label>
-                  </div>
+                <div class="col-md-6">
+                  <select name="class" class="form-select" required aria-label="Default select example">
+                  
+                    <option selected value="cs1">CS 1</option>
+                    <option value="cs2">CS 2</option>
+                    <option value="cs3">CS 3</option>
+                    <option value="es1">ES 1</option>
+                    <option value="es2">ES 2</option>
+                    <option value="es3">ES 3</option>
+                    <option value="ps1">PS 1</option>
+                    <option value="ps2">PS 2</option>
+                    <option value="ps3">PS 3</option>
+
+                  </select>
                 </div>
                 
               </div>
+              
+                <input hidden type="text" name="programtype" id="" value="solo">
+                <input hidden type="text" name="status" id="" value="pending">
+                <input hidden type="text" name="message" id="" value="null">
+                <input hidden type="text" name="mark1" id="" value="0">
+                <input hidden type="text" name="mark2" id="" value="0">
+                <input hidden type="text" name="mark3" id="" value="0">
+
               </div>
 
 
@@ -209,51 +250,65 @@
             </form>
           </div>
           <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
-             <form >
+             <form action="/group-application" method="post">
 
+                <div class="alert alert-info my-" role="alert">
+                  <h5 class="text-center my-4">Instructions</h5>
+                  <ul>
+                    <li>Provide the register number of all members</li>
+                    <li>Maximum 10 members are allows for the group performance</li>
+                    <li>Only the group leader need to submit the application for group performance  </li>
+                  </ul>
+                </div>
+
+               
 
 
               <!-- 2 column grid layout with text inputs for the first and last names -->
-              <div class="py-4">
-                <div class="row mb-4">
+
+               <div class="row mb-4">
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" required id="form3Example1" class="form-control" />
-                      <label class="form-label" for="form3Example1">Item</label>
+                      <input name="name" type="text" class="form-control" />
+                      <label class="form-label" >Group leader name</label>
                     </div>
                   </div>
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" required id="form3Example2" class="form-control" />
-                      <label class="form-label" for="form3Example2">Phone number</label>
+                      <input name="leaderregno" type="text" class="form-control" />
+                      <label class="form-label" >Group leader Register number</label>
                     </div>
                   </div>
                 </div>
 
-                <div class="alert alert-info my-3" role="alert">
-                  Please provide the register number of your co-participants in the member field
-                </div>
-
+              <div class="py-2">
                 <div class="row mb-4">
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="form3Example1" class="form-control" />
-                      <label class="form-label" for="form3Example1">Team leader Register number</label>
+                      <input type="text" name="item" required class="form-control" />
+                      <label class="form-label" >Item</label>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-outline">
+                      <input type="text" name="phoneno" required id="form3Example2" class="form-control" />
+                      <label class="form-label" >Phone number</label>
                     </div>
                   </div>
                 </div>
 
+                
 
                 <div class="row mb-4">
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="form3Example1" class="form-control" />
+                      <input type="text" name="member1" id="form3Example1" class="form-control" />
                       <label class="form-label" for="form3Example1">Member 1</label>
                     </div>
                   </div>
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="form3Example2" class="form-control" />
+                      <input type="text" name="member2" id="form3Example2" class="form-control" />
                       <label class="form-label" for="form3Example2">Member 2</label>
                     </div>
                   </div>
@@ -262,13 +317,13 @@
                 <div class="row mb-4">
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="form3Example1" class="form-control" />
+                      <input type="text" name="member3" id="form3Example1" class="form-control" />
                       <label class="form-label" for="form3Example1">Member 3</label>
                     </div>
                   </div>
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="form3Example2" class="form-control" />
+                      <input type="text" name="member4" id="form3Example2" class="form-control" />
                       <label class="form-label" for="form3Example2">Member 4</label>
                     </div>
                   </div>
@@ -277,13 +332,13 @@
                 <div class="row mb-4">
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="form3Example1" class="form-control" />
+                      <input type="text" name="member5" id="form3Example1" class="form-control" />
                       <label class="form-label" for="form3Example1">Member 5</label>
                     </div>
                   </div>
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="form3Example2" class="form-control" />
+                      <input type="text" name="member6" id="form3Example2" class="form-control" />
                       <label class="form-label" for="form3Example2">Member 6</label>
                     </div>
                   </div>
@@ -292,13 +347,13 @@
                 <div class="row mb-4">
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="form3Example1" class="form-control" />
+                      <input type="text" name="member7" id="form3Example1" class="form-control" />
                       <label class="form-label" for="form3Example1">Member 7</label>
                     </div>
                   </div>
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="form3Example2" class="form-control" />
+                      <input type="text" name="member8" id="form3Example2" class="form-control" />
                       <label class="form-label" for="form3Example2">Member 8</label>
                     </div>
                   </div>
@@ -306,13 +361,13 @@
                 <div class="row mb-4">
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="form3Example1" class="form-control" />
+                      <input type="text" name="member9" id="form3Example1" class="form-control" />
                       <label class="form-label" for="form3Example1">Member 9</label>
                     </div>
                   </div>
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="form3Example2" class="form-control" />
+                      <input type="text" name="member10" id="form3Example2" class="form-control" />
                       <label class="form-label" for="form3Example2">Member 10</label>
                     </div>
                   </div>
@@ -321,6 +376,12 @@
       
               </div>
 
+                <input hidden type="text" name="programtype" id="" value="group">
+                <input hidden type="text" name="status" id="" value="pending">
+                <input hidden type="text" name="message" id="" value="null">
+                <input hidden type="text" name="mark1" id="" value="0">
+                <input hidden type="text" name="mark2" id="" value="0">
+                <input hidden type="text" name="mark3" id="" value="0">
 
 
               <!-- Submit button -->
@@ -338,9 +399,12 @@
 
     <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
       <hr class="my-5 " />
-      <h3 class="text-center mb-4">Applied program details</h3>
+      <h3 class="text-center mb-5">Applied program details</h3>
       <div class="container">
-       <table class="table">
+        <div class="alert alert-warning" role="alert">
+         <i class="fas fa-exclamation-circle me-2"></i> In case your application got rejected delete the application and create new 
+        </div>
+       <table class="table table-bordered">
           <thead>
             <tr>
               <th scope="col">No</th>
@@ -348,29 +412,20 @@
               <th scope="col">Mode</th>
               <th scope="col">Status</th>
               <th scope="col">Any Message</th>
+              <th scope="col">Edit</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>Somethung....</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-              <td>Somethung....</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
-              <td>Somethung....</td>
-            </tr>
+            {{#each applications}}
+              <tr>
+                <th scope="row">{{@index}}</th>
+                <td>{{this.item}}</td>
+                <td>{{this.programtype}}</td>
+                <td><a href="#" class="badge badge-primary">{{this.status}}</a></td>
+                <td>{{this.message}}</td>
+                <td><a href="/delete-application/{{this._id}}" class="btn btn-danger"> Delete </a></td>
+              </tr>
+           {{/each}}
           </tbody>
         </table>
       </div>
@@ -391,24 +446,54 @@
             </tr>
           </thead>
           <tbody>
+            {{#each completedApplications}}
             <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td><a href="" class="btn btn-success">Download</a></td>
+              <th scope="row">{{@index}}</th>
+              <td>{{this.item}}</td>
+              <td>{{this.status}}</td>
+              <td><a href="/certificate/{{this._id}}" class="btn btn-success">View</a></td>
             </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+     <div class="tab-pane fade" id="list-verified" role="tabpanel" aria-labelledby="list-verified-list">
+      <hr class="my-5 " />
+      <div class="container">
+        <h3 class="text-center mb-4">Verified program details</h3>
+        <table class="table table-bordered">
+          <thead>
             <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td><a href="" class="btn btn-success">Download</a></td>
+              <th scope="col">No</th>
+              <th scope="col">Item</th>
+              <th scope="col">Type</th>
+              <th scope="col">Status</th>
+              <th scope="col">Day</th>
+              <th scope="col">Stage</th>
+              <th scope="col">Time</th>
+              <th scope="col">Chest no.</th>
+             
             </tr>
+          </thead>
+          <tbody>
+            {{#each verifiedApplications}}
             <tr>
-              <th scope="row">3</th>
-              <td>Larry the Bird</td>
-              <td>@twitter</td>
-              <td><a href="" class="btn btn-success">Download</a></td>
+              
+              <th scope="row">{{@index}}</th>
+              <td>{{this.item}}</td>
+              <td>{{this.programtype}}</td>
+              <td>{{this.status}}</td>
+              <td>{{this.day}}</td>
+              <td>{{this.stage}}</td>
+              <td>{{this.time}}</td>
+              <td>{{this.chestno}}</td>
+              
             </tr>
+            {{/each}}
+           
           </tbody>
         </table>
       </div>

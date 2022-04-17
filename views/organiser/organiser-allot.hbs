@@ -1,0 +1,111 @@
+<div class="container d-flex bg-info text-dark justify-content-center my-3 shadow-4-strong p-3 rounded">
+    <div class="col-md-6 ">
+        <a href="/organiser/dashboard" class="btn btn-danger">Go back</a>
+        <div>
+            <h3 class="my-3 mb-4 text-center heading-text"><b>Stage allocation</b></h3>
+        </div>
+        <div>
+
+            <div class="row mb-3">
+                <div class="form-group col-md-6">
+                    <label class="mb-2">Student / Group Leader</label>
+                    <input type="text" class="form-control" value={{details.name}} disabled>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="mb-2">Item</label>
+                    <input type="text" class="form-control" value={{details.item}} disabled>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="form-group col-md-6">
+                    <label class="mb-2">Phone no.</label>
+                    <input type="text" class="form-control" value={{details.phoneno}} disabled>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="mb-2">Program Type</label>
+                    <input type="text" class="form-control" value={{details.programtype}} disabled>
+                </div>
+            </div>
+            <form action="/organiser/allot" method="post">
+
+                <div class="row mb-3">
+                    <div class="form-group col-md-6">
+                        <label class="mb-2">Stage</label>
+                        <select name="stage" class="form-select" aria-label="Default select example">
+                            <option selected value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="mb-2">Day</label>
+                        <select name="day" class="form-select" aria-label="Default select example">
+                            <option selected value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="form-group col-md-6">
+                        <label class="mb-2">Chest number</label>
+                        <input type="text" class="form-control" name="chestno">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="mb-2">Time ( expected )</label>
+                        <input type="text" class="form-control" name="time">
+                    </div>
+                </div>
+                    <input name="id" value={{details._id}} hidden>
+                <div class="row mb-2">
+                    <div class="form-group col-md-6">
+                        <p>Status : <span class="badge badge-pill badge-success">{{details.status}}</span></p>
+                    </div>
+                </div>
+
+                <div class="my-3 pb-2">
+                    <button type="submit" class="btn btn-success me-3">Submit</button>
+
+                </div>
+
+            </form>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .heading-text {
+        letter-spacing: 0.8px;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    a {
+        color: #00B7FF;
+    }
+
+    .navbar .nav-link {
+        color: #fff !important;
+    }
+
+    li {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+    }
+</style>

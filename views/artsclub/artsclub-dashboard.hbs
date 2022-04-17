@@ -10,10 +10,15 @@
         <a class="list-group-item list-group-item-action py-3" id="list-profile-list" data-mdb-toggle="list"
           href="#list-profile" role="tab" aria-controls="list-profile"><i class="fas fa-users me-2"></i>Participants</a>
         <a class="list-group-item list-group-item-action py-3" id="list-messages-list" data-mdb-toggle="list"
-          href="#list-messages" role="tab" aria-controls="list-messages"><i class="fas fa-user-graduate me-2"></i>
-          Certificate</a>
+          href="#list-messages" role="tab" aria-controls="list-messages"><i class="fas fa-edit me-2"></i>
+          Notifications</a>
+        <a class="list-group-item list-group-item-action py-3" id="list-organiser-list" data-mdb-toggle="list"
+          href="#list-organiser" role="tab" aria-controls="list-organiser"><i class="fas fa-people-carry me-2"></i>
+          Organiser</a>
+
         <a class="list-group-item list-group-item-action py-3" id="list-settings-list" data-mdb-toggle="list"
-          href="#list-settings" role="tab" aria-controls="list-settings"><i class="fas fa-home me-2"></i> About</a>
+          href="#list-settings" role="tab" aria-controls="list-settings"><i class="fas fa-poll me-2"></i> Result</a>
+
 
       </div>
     </div>
@@ -45,12 +50,14 @@
         <li class="nav-item dropdown me-3">
           <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
             id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-user-circle"></i>
+            <i class="fas fa-user-circle me-3"></i><span><b>Artsclub</b></span>
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-
             <li>
-              <a class="dropdown-item" href="#">Logout</a>
+              <a class="dropdown-item" href="/artsclub/dashboard"><i class="fas fa-user me-3"></i>Artsclub</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/artsclub/logout"><i class="me-3 fas fa-sign-out-alt"></i>Logout</a>
             </li>
           </ul>
         </li>
@@ -76,28 +83,20 @@
                 <th scope="col">No</th>
                 <th scope="col">Name</th>
                 <th scope="col">Reg no</th>
+                <th scope="col">Class</th>
                 <th scope="col">Phone</th>
               </tr>
             </thead>
             <tbody>
+              {{#each allStudents}}
               <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="row">{{@index}}</th>
+                <td>{{this.name}}</td>
+                <td>{{this.registerno}}</td>
+                <td>{{this.class}}</td>
+                <td>{{this.phoneno}}</td>
               </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry the Bird</td>
-                <td>sdfffat</td>
-                <td>@twitter</td>
-              </tr>
+              {{/each}}
             </tbody>
           </table>
         </div>
@@ -110,7 +109,7 @@
     <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
       <hr class="my-5 " />
       <section id="participants" class="container">
-        <h2 class="text-center">Participant list</h2>
+        <h2 class="text-center">Participants list</h2>
 
         <ul class="nav nav-pills mb-3" id="pills-tab2" role="tablist">
           <li class="nav-item" role="presentation">
@@ -132,40 +131,31 @@
 
             {{!-- Solo item table --}}
             <div class="container">
-              <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">No</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Reg no</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Details</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td><span class="badge badge-pill badge-success">Success</span></td>
-                  <td><button type="button" class="btn btn-primary btn-rounded">View</button></td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td><span class="badge badge-pill badge-success">Success</span></td>
-                  <td><button type="button" class="btn btn-primary btn-rounded">View</button></td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry the Bird</td>
-                  <td>@twitter</td>
-                  <td><span class="badge badge-pill badge-success">Success</span></td>
-                  <td><button type="button" class="btn btn-primary btn-rounded">View</button></td>
-                </tr>
-              </tbody>
-            </table>
+              <table class="table table-bordered text-center">
+                <thead>
+                  <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Reg no</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  {{#each allSoloPerformance}}
+                  <tr>
+                    <th scope="row">{{@index}}</th>
+                    <td>{{this.name}}</td>
+                    <td>{{this.regno}}</td>
+                    <td><span class="badge badge-pill badge-success">{{this.status}}</span></td>
+                    <td><a href="/artsclub/verify-programs/{{this._id}}" class="btn btn-primary btn-rounded">View</a>
+                    </td>
+                  </tr>
+                  {{/each}}
+
+                </tbody>
+              </table>
             </div>
             {{!-- solo item table ends --}}
 
@@ -179,40 +169,34 @@
 
             {{!-- group Table --}}
             <div class="container">
-              <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">No</th>
-                  <th scope="col">Group Leader</th>
-                  <th scope="col">Item</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Details</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td><span class="badge badge-pill badge-success">Success</span></td>
-                  <td><button type="button" class="btn btn-primary btn-rounded">View</button></td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td><span class="badge badge-pill badge-success">Success</span></td>
-                  <td><button type="button" class="btn btn-primary btn-rounded">View</button></td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry the Bird</td>
-                  <td>@twitter</td>
-                  <td><span class="badge badge-pill badge-success">Success</span></td>
-                  <td><button type="button" class="btn btn-primary btn-rounded">View</button></td>
-                </tr>
-              </tbody>
-            </table>
+              <table class="table table-bordered text-center">
+                <thead>
+                  <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Group Leader</th>
+                    <th scope="col">Item</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each allGroupPerformance}}
+                  <tr>
+                    <th scope="row">{{@index}}</th>
+                    <td>{{this.name}}</td>
+                    <td>{{this.item}}</td>
+                    <td><span class="badge badge-pill badge-success">{{this.status}}</span></td>
+                    <td><a href="/artsclub/verify-programs/{{this._id}}" class="btn btn-primary btn-rounded">View</a>
+                    </td>
+                  </tr>
+
+                  {{/each}}
+
+                </tbody>
+              </table>
+
+
+
             </div>
             {{!-- end of roup table --}}
           </div>
@@ -233,13 +217,206 @@
 
     <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
       <hr class="my-5 " />
-      third
+      <div class="container ">
+        <h3 class="text-center mb-4">Create a post</h3>
+        <div class="d-flex justify-content-center ">
+
+          <form action="/artsclub/new-post" method="post" class="col-md-10 shadow-1-strong rounded p-5">
+            <div class="form-group mb-2">
+              <label>Title</label>
+              <input type="text" required name="title" class="form-control">
+            </div>
+            <div class="form-group">
+              <label class="mb-2">Type a message here ...</label>
+              <textarea name="message" class="form-control" rows="3"></textarea>
+              <input required type="text" name="author" value="Artsclub_secratrary" hidden>
+              <button type="submit" class="mt-4 btn btn-success">Submit</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+      <div class="container mt-5 col-md-10">
+
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Title</th>
+              <th scope="col">Author</th>
+              <th scope="col">Message</th>
+              <th scope="col">Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each allPosts}}
+            <tr>
+              <th scope="row">{{@index}}</th>
+              <td>{{this.title}}</td>
+              <td>{{this.author}}</td>
+              <td>{{this.message}}</td>
+              <td><a href="/artsclub/delete-post/{{this._id}}" class="btn btn-danger">Delete</a></td>
+
+            </tr>
+            {{/each}}
+
+          </tbody>
+        </table>
+
+      </div>
+
+      <hr class="my-5 " />
+
+      <h3 class="text-center mb-4">Notice board</h3>
+      <div class="d-flex justify-content-center">
+
+        <form action="/artsclub/new-notice" method="post" class="col-md-10 shadow-1-strong rounded p-5">
+          <div class="form-group">
+            <label class="mb-2">Message</label>
+            <textarea name="message" required class="form-control" rows="3"></textarea>
+            <input required type="text" name="author" value="Artsclub_secratrary" hidden>
+            <button type="submit" class="mt-4 btn btn-success">Submit</button>
+          </div>
+        </form>
+
+
+
+      </div>
+      <div class="container mt-5 col-md-10">
+
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">content</th>
+              <th scope="col">Author</th>
+              <th scope="col">Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each allNotice}}
+            <tr>
+              <th scope="row">{{@index}}</th>
+              <td>{{this.message}}</td>
+              <td>{{this.author}}</td>
+              <td><a href="/artsclub/delete-notice/{{this._id}}" class="btn btn-danger">Delete</a></td>
+
+            </tr>
+            {{/each}}
+
+          </tbody>
+        </table>
+
+      </div>
+
     </div>
 
     <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
       <hr class="my-5 " />
-      fourth
+      <div class="container">
+        <h3 class="text-center mb-5">Result statistics</h3>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Student</th>
+              <th scope="col">Item</th>
+              <th scope="col">Mark 1</th>
+              <th scope="col">Mark 2</th>
+              <th scope="col">Mark 3</th>
+              <th scope="col">Result</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            {{#each results}}
+            <tr>
+              <th scope="row">{{@index}}</th>
+              <td>{{this.name}}</td>
+              <td>{{this.item}}</td>
+              <td>{{this.mark1}}</td>
+              <td>{{this.mark2}}</td>
+              <td>{{this.mark3}}</td>
+
+            </tr>
+            {{/each}}
+
+          </tbody>
+        </table>
+      </div>
     </div>
+
+    <div class="tab-pane fade" id="list-organiser" role="tabpanel" aria-labelledby="list-organiser-list">
+      <hr class="my-5 " />
+      <div class="container">
+        <h3 class="text-center mb-5 ">Organiser details</h3>
+        <div class="container">
+          <h5 class="mb-4 text-primary ">Add organiser</h5>
+          <form action="/artsclub/add-organiser" method="post">
+
+          <div class="row mb-3 ">
+            <div class="form-group col-md-6">
+              <label class="mb-2">Name</label>
+              <input type="text" name="name" class="form-control">
+            </div>
+            <div class="form-group col-md-6">
+              <label class="mb-2">Phone no.</label>
+              <input type="text" name="phoneno" class="form-control">
+            </div>
+          </div>
+        <div class="row mb-3 ">
+          <div class="form-group col-md-6">
+            <label class="mb-2">Email</label>
+            <input type="text" name="email" class="form-control">
+          </div>
+          <div class="form-group col-md-6">
+            <label class="mb-2">Password</label>
+            <input type="text" name="password" class="form-control">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+          </form>
+        </div>
+ <hr class="my-5 " />
+        <h5 class="my-4 text-primary" >Organiser information</h5>
+         <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Name</th>
+              <th scope="col">Phone no</th>
+              <th scope="col">Email</th>
+              <th scope="col">Password</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each organisers}}
+            <tr>
+              <th scope="row">{{@index}}</th>
+              <td>{{this.name}}</td>
+              <td>{{this.phoneno}}</td>
+              <td>{{this.email}}</td>
+              <td>{{this.password}}</td>
+
+            </tr>
+            {{/each}}
+
+          </tbody>
+        </table>
+         <hr class="my-5 " />
+        <h5 class="my-4 text-primary" >Remove Organiser</h5>
+        <form action="/artsclub/delete-organiser" method="post">
+            <div class="col-md-4">
+               <label class="">Email</label>
+              <input type="text" class="form-control my-2" name="email" required id="">
+            </div>
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
 
   </div>
   <div class="container pt-4">

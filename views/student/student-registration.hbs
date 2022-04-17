@@ -5,13 +5,13 @@
         <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
           <div class="card-body p-4 p-md-5">
             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">Student Registration</h3>
-            <form>
+            <form method="post" action="/signup">
 
               <div class="row">
                 <div class="col-md-6 mb-4">
 
                   <div class="form-outline">
-                    <input type="text" id="fullname" required class="form-control form-control-lg" />
+                    <input name="name" type="text" id="fullname" required class="form-control form-control-lg" />
                     <label class="form-label" for="fullname">Full name</label>
                   </div>
 
@@ -19,8 +19,8 @@
                 <div class="col-md-6 mb-4">
 
                   <div class="form-outline">
-                    <input type="text" id="lastName" required class="form-control form-control-lg" />
-                    <label class="form-label" for="lastName">Register number</label>
+                    <input type="text" name="registerno" id="regno" required class="form-control form-control-lg" />
+                    <label class="form-label" for="regno">Register number</label>
                   </div>
 
                 </div>
@@ -30,14 +30,14 @@
                 <div class="col-md-6 mb-4 d-flex align-items-center">
 
                   <div class="form-outline datepicker w-100">
-                    <input type="text" required class="form-control form-control-lg" id="rollno" />
-                    <label for="birthdayDate" class="form-label">Roll no</label>
+                    <input name="rollno" type="text" required class="form-control form-control-lg" id="rollno" />
+                    <label for="rollno" class="form-label">Roll no</label>
                   </div>
 
                 </div>
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
-                    <input type="tel" id="phoneNumber" class="form-control form-control-lg" />
+                    <input name="phoneno" type="tel" id="phoneNumber" class="form-control form-control-lg" />
                     <label class="form-label" for="phoneNumber">Phone number</label>
                   </div>
                 </div>
@@ -47,7 +47,7 @@
                 <div class="col-md-6 mb-4 pb-2">
 
                   <div class="form-outline">
-                    <input type="email" required id="emailAddress" class="form-control form-control-lg" />
+                    <input name="email" type="email" required id="emailAddress" class="form-control form-control-lg" />
                     <label class="form-label" for="emailAddress">Email</label>
                   </div>
 
@@ -58,9 +58,9 @@
                     <input
                       class="form-check-input"
                       type="radio"
-                      name="inlineRadioOptions"
+                      name="gender"
                       id="femaleGender"
-                      value="option1"
+                      value="female"
                       checked
                       required
                     />
@@ -71,9 +71,9 @@
                     <input
                       class="form-check-input"
                       type="radio"
-                      name="inlineRadioOptions"
+                      name="gender"
                       id="maleGender"
-                      value="option2"
+                      value="male"
                     />
                     <label class="form-check-label" for="maleGender">Male</label>
                   </div>
@@ -85,16 +85,16 @@
                 <div class="col-md-6 mb-4">
 
                   <div class="form-outline">
-                    <input required type="password" id="fullname" class="form-control form-control-lg" />
-                    <label class="form-label" for="fullname">Password</label>
+                    <input name="password" required type="password" id="password" class="form-control form-control-lg" />
+                    <label class="form-label" for="password">Password</label>
                   </div>
 
                 </div>
                 <div class="col-md-6 mb-4">
 
                   <div class="form-outline">
-                    <input required type="password" id="lastName" class="form-control form-control-lg" />
-                    <label class="form-label" for="lastName">Confirm Password</label>
+                    <input name="confirmpassword" required type="password" id="cpassword" class="form-control form-control-lg" />
+                    <label class="form-label" for="cpassword">Confirm Password</label>
                   </div>
 
                 </div>
@@ -103,23 +103,36 @@
               <div class="row">
                 <div class="col-md-6 mb-4">
 
-                  <select class="form-select" required aria-label="Default select example">
+                  <select name="class" class="form-select" required aria-label="Default select example">
                     <option selected>Class</option>
-                    <option value="1">CS1</option>
-                    <option value="2">CS2</option>
-                    <option value="3">CS3</option>
-                    <option value="1">ES1</option>
-                    <option value="2">ES2</option>
-                    <option value="3">ES3</option>
-                    <option value="1">PS1</option>
-                    <option value="2">PS2</option>
-                    <option value="3">PS3</option>
+                    <option value="cs1">CS 1</option>
+                    <option value="cs2">CS 2</option>
+                    <option value="cs3">CS 3</option>
+                    <option value="es1">ES 1</option>
+                    <option value="es2">ES 2</option>
+                    <option value="es3">ES 3</option>
+                    <option value="ps1">PS 1</option>
+                    <option value="ps2">PS 2</option>
+                    <option value="ps3">PS 3</option>
 
                   </select>
 
 
                 </div>
 
+                 <div class="col-md-6 mb-4">
+
+                  <select name="department" class="form-select" required aria-label="Default select example">
+                    <option selected>Department</option>
+                    <option value="computer">Computer</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="printing">Printing</option>
+                   
+
+                  </select>
+
+
+                </div>
               
 
 

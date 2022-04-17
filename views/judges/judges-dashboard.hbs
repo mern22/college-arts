@@ -1,1 +1,249 @@
-<h2>Judges dashboard</h2>
+<!--Main Navigation-->
+<header>
+    <!-- Sidebar -->
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+        <div class="position-sticky">
+            <div class="list-group list-group-flush mx-3 mt-4 py-3" id="list-tab" role="tablist">
+
+                <a class="list-group-item list-group-item-action active py-3" id="list-home-list" data-mdb-toggle="list"
+                    href="#list-home" role="tab" aria-controls="list-home"><i class="fas fa-tachometer-alt me-2"></i>
+                    Dashboard</a>
+                <a class="list-group-item list-group-item-action py-3" id="list-profile-list" data-mdb-toggle="list"
+                    href="#list-profile" role="tab" aria-controls="list-profile"><i class="fas fa-users me-2"></i>Mark
+                    Submit</a>
+
+            </div>
+        </div>
+    </nav>
+    <!-- Sidebar -->
+
+    <!-- Navbar -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+                aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Brand -->
+            <a class="navbar-brand ms-5" href="#">
+                <h2>Logo</h2>
+            </a>
+            <!-- Search form -->
+
+
+            <!-- Right links -->
+            <ul class="navbar-nav ms-auto d-flex flex-row">
+                <!-- Notification dropdown -->
+
+                <!-- Avatar -->
+                <li class="nav-item dropdown me-3">
+                    <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
+                        id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user-circle me-3"></i><span><b>Judges</b></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+
+                        <li>
+                            <a class="dropdown-item" href="/judges/logout"><i class="me-3 fas fa-sign-out-alt"></i>Logout</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+</header>
+<!--Main Navigation-->
+
+<!--Main layout-->
+<main style="margin-top: 70px;">
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+            <div class="container py-3">
+
+                <h3 class="text-center mb-5 mt-4">Judges Information</h3>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="card mb-4">
+                            <div class="card-body text-center">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                                    alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                                <h5 class="my-3">{{judge.name}}</h5>
+                                <p class="text-muted mb-1">{{judge.username}}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <p class="mb-0">Day</p>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <p class="text-muted mb-0">{{judge.day}}</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <p class="mb-0">Stage</p>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <p class="text-muted mb-0">{{judge.stage}}</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <p class="mb-0">Item</p>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <p class="text-muted mb-0">{{judge.item}}</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <p class="mb-0">Phoneno</p>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <p class="text-muted mb-0">{{judge.phoneno}}</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+
+            <div class="container py-3">
+                <h3 class="text-center mb-5 mt-4">Participants</h3>
+
+                <div class="container">
+                    <table class="table table-bordered">
+
+                        <thead>
+                            <tr>
+
+                                <th scope="col">Chest no.</th>
+                                <th scope="col">Student / Group leader</th>
+                                <th scope="col">Item</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Details</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each participants}}
+                            <tr>
+                                <td scope="row">{{this.chestno}}</td>
+                                <td>{{this.name}}</td>
+                                <td>{{this.item}}</td>
+                                 <td>{{this.programtype}}</td>
+                                <td class="text-center"><a href="/judges/mark-enter/{{this._id}}" class="btn btn-success">view</a></td>
+                            </tr>
+                            {{/each}}
+
+                        </tbody>
+                    </table>
+                </div>
+
+            
+
+            </div>
+        </div>
+    </div>
+
+
+
+</main>
+<!--Main layout-->
+
+
+{{!-- styles for dashboard --}}
+<style>
+    body {
+        background-color: #fbfbfb;
+    }
+
+    @media (min-width: 991.98px) {
+        main {
+            padding-left: 240px;
+        }
+    }
+
+    /* Sidebar */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        padding: 58px 0 0;
+        /* Height of navbar */
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+        width: 240px;
+        z-index: 600;
+    }
+
+    @media (max-width: 991.98px) {
+        .sidebar {
+            width: 100%;
+        }
+    }
+
+    .sidebar .active {
+        border-radius: 5px;
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    }
+
+    .fa-user-circle {
+        font-size: 25px;
+        color: #fff;
+    }
+
+    .sidebar-sticky {
+        position: relative;
+        top: 0;
+        height: calc(100vh - 48px);
+        padding-top: 0.5rem;
+        overflow-x: hidden;
+        overflow-y: auto;
+        /* Scrollable contents if viewport is shorter than content. */
+    }
+
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    a {
+        color: #00B7FF;
+    }
+
+    .navbar .nav-link {
+        color: #fff !important;
+    }
+
+    li {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+    }
+
+    .about-img {
+        width: 350px;
+    }
+</style>

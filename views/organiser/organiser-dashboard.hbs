@@ -46,12 +46,12 @@
         <li class="nav-item dropdown me-3">
           <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
             id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-user-circle"></i>
+            <i class="fas fa-user-circle me-3"></i> <span><b>Organiser</b></span>
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
 
             <li>
-              <a class="dropdown-item" href="#">Logout</a>
+              <a class="dropdown-item" href="/organiser/logout"><i class="me-3 fas fa-sign-out-alt"></i>Logout</a>
             </li>
           </ul>
         </li>
@@ -68,8 +68,8 @@
   <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
       <section class="text-center mt-2 container">
-
         <div class="row py-4">
+          <h3 class="text-center mt-3 mb-5">Welcome to Asterica</h3>
           <div class="col-sm-6">
             <div class="card">
               <div class="card-body">
@@ -87,17 +87,18 @@
                         <h5 class="modal-title" id="exampleModalLabel">Post Details</h5>
                         <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
                       </div>
-                      <form action="">
+                      <form action="/organiser/addpost" method="post">
 
                         <div class="modal-body">
                           <div class="my-2">
                             <input type="text" id="typeText" placeholder="Title" class="form-control" />
                           </div>
                           <div class=" mb-4">
-                            <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
+                            <textarea name="message" class="form-control" id="textAreaExample" rows="4"></textarea>
                           </div>
-
+                          <input type="text" name="author" value="organiser" hidden>
                         </div>
+
                         <div class="modal-footer">
                           <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">Close</button>
                           <button type="submit" class="btn btn-success">Save</button>
@@ -129,11 +130,12 @@
                         <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
                       </div>
 
-                      <form action="">
+                      <form action="/organiser/addnotice" method="post">
                         <div class="modal-body">
                           <div class=" mb-4">
-                            <textarea class="form-control" placeholder="Messages" id="textAreaExample"
+                            <textarea name="message" class="form-control" placeholder="Messages" id="textAreaExample"
                               rows="4"></textarea>
+                              <input hidden type="text" name="author" value="program_organiser">
                           </div>
                         </div>
                         <div class="modal-footer">
@@ -157,39 +159,94 @@
 
     <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
       <hr class="my-5 " />
-      <section id="participants" class="container">
-        <h3 class="my-5 text-center">Participating Students</h3>
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">No</th>
-              <th scope="col">Name</th>
-              <th scope="col">Item</th>
-              <th scope="col">Stage</th>
-              <th scope="col">Day</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>548421</td>
-              <td>1</td>
+      <div class="container" id="participants">
+        <h3 class="mb-3 text-center">Participants Information</h3>
 
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>874512</td>
-              <td>1</td>
+        <ul class="nav nav-pills mb-3" id="pills-tab2" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-home-tab2" data-mdb-toggle="pill" data-mdb-target="#pills-home2"
+              type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+              Solo
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-profile-tab2" data-mdb-toggle="pill" data-mdb-target="#pills-profile2"
+              type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+              Group
+            </button>
+          </li>
+        </ul>
+        {{!-- solo item pills --}}
+        <div class="tab-content" id="pills-tabContent2">
+          <div class="tab-pane fade show active" id="pills-home2" role="tabpanel" aria-labelledby="pills-home-tab2">
 
-            </tr>
-          </tbody>
-        </table>
+            {{!-- Solo item table --}}
+            <div class="container">
+              <table class="table table-bordered">
+              
+                <thead>
+                  <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Item</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Details</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each approvedSolo}}
+                  <tr>
+                    <th scope="row">{{@index}}</th>
+                    <td>{{this.name}}</td>
+                    <td>{{this.item}}</td>
+                    <td>{{this.status}}</td>
+                    <td><a href="/organiser/allot/{{this._id}}" class="btn btn-success">view</a></td>
+                  </tr>
+                  {{/each}}
+                  
+                </tbody>
+              </table>
+            </div>
+            {{!-- solo item table ends --}}
 
-      </section>
+
+
+
+
+          </div>
+          {{!-- group pills --}}
+          <div class="tab-pane fade" id="pills-profile2" role="tabpanel" aria-labelledby="pills-profile-tab2">
+
+            {{!-- group Table --}}
+            <table class="table table-bordered">
+             
+              <thead>
+                <tr>
+                  <th scope="col">No</th>
+                  <th scope="col">Group leader</th>
+                  <th scope="col">Item</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Details</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                {{#each approvedGroup}}
+                <tr>
+                  <th scope="row">{{@index}}</th>
+                  <td>{{this.leaderregno}}</td>
+                  <td>{{this.item}}</td>
+                  <td>{{this.status}}</td>
+                  <td><a href="/organiser/allot/{{this._id}}" class="btn btn-success">view</a></td>
+                </tr>
+                {{/each}}
+              </tbody>
+            </table>
+            {{!-- end of roup table --}}
+          </div>
+        </div>
+      </div>
     </div>
 
 
@@ -214,11 +271,12 @@
                 <h5 class="modal-title" id="exampleModalLabel">Remove Judge</h5>
                 <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
               </div>
-              <form action="">
+
+              <form action="/organiser/removejudge" method="post">
                 <div class="modal-body">
                   <div class="form-outline mb-4">
-                    <input type="text" id="form1Example1" class="form-control" />
-                    <label class="form-label" for="form1Example1">Username</label>
+                    <input type="text" name="username"  class="form-control" />
+                    <label class="form-label" >Username</label>
                   </div>
                 </div>
                 <div class="modal-footer">
@@ -226,6 +284,7 @@
                   <button type="submit" class="btn btn-danger">Remove</button>
                 </div>
               </form>
+
             </div>
           </div>
         </div>
@@ -246,53 +305,62 @@
                   <div class="accordion-body">
 
 
-                    <form class="container">
+                    <form class="container" action="/organiser/addjudge" method="post">
 
                       <div class="row">
                         <div class="form-group col-md-6">
-                          <label for="inputState">Day</label>
-                          <select id="inputState" class="form-control">
-                            <option selected>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                          <label >Day</label>
+                          <select name="day" class="form-control">
+                            <option value="1" selected>1</option>
+                            <option value="2" >2</option>
+                            <option value="3" >3</option>
+                            <option value="4" >4</option>
+                            <option value="5" >5</option>
 
                           </select>
                         </div>
                         <div class="form-group col-md-6">
-                          <label for="inputState">Stage</label>
-                          <select id="inputState" class="form-control">
-                            <option selected>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                          <label >Stage</label>
+                          <select name="stage" class="form-control">
+
+                            <option value="1" selected>1</option>
+                            <option value="2" >2</option>
+                            <option value="3" >3</option>
+                            <option value="4" >4</option>
+                            <option value="5" >5</option>
 
                           </select>
                         </div>
                       </div>
                       <div class="row mt-2">
                         <div class="form-group col-md-6">
-                          <label for="inputAddress">Name</label>
-                          <input type="text" class="form-control" id="inputAddress">
+                          <label >Name</label>
+                          <input name="name" type="text" class="form-control" >
                         </div>
                         <div class="form-group col-md-6">
-                          <label for="inputAddress2">Username</label>
-                          <input type="text" class="form-control" id="inputAddress2">
+                          <label >Username</label>
+                          <input name="username" type="text" class="form-control" >
                         </div>
                       </div>
                       <div class="row mt-2">
                         <div class="form-group col-md-6">
-                          <label for="inputCity">Password</label>
-                          <input type="password" class="form-control" id="inputCity">
+                          <label >Password</label>
+                          <input name="password" type="password" class="form-control" >
                         </div>
                         <div class="form-group col-md-6">
-                          <label for="inputCity">Item</label>
-                          <input type="text" class="form-control">
+                          <label >Item</label>
+                          <input type="text" name="item" class="form-control">
                         </div>
-
                       </div>
+
+                       <div class="row mt-2">
+                        
+                        <div class="form-group col-md-6">
+                          <label>Phone no.</label>
+                          <input type="text" name="phoneno" class="form-control">
+                        </div>
+                      </div>
+
                       <button type="submit" class="mt-3 btn btn-primary">Submit</button>
 
                     </form>
@@ -325,15 +393,15 @@
       <div class="container">
         <h3 class="mb-3 text-center">Stages Information</h3>
 
-        <ul class="nav nav-pills mb-3" id="pills-tab2" role="tablist">
+        <ul class="nav nav-pills mb-3" id="pills-tab5" role="tablist">
           <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="pills-home-tab2" data-mdb-toggle="pill" data-mdb-target="#pills-home2"
+            <button class="nav-link active" id="pills-home-tab2" data-mdb-toggle="pill" data-mdb-target="#pills-home6"
               type="button" role="tab" aria-controls="pills-home" aria-selected="true">
               Judges
             </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-profile-tab2" data-mdb-toggle="pill" data-mdb-target="#pills-profile2"
+            <button class="nav-link" id="pills-profile-tab2" data-mdb-toggle="pill" data-mdb-target="#pills-profile5"
               type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
               Students
             </button>
@@ -341,7 +409,7 @@
         </ul>
         {{!-- solo item pills --}}
         <div class="tab-content" id="pills-tabContent2">
-          <div class="tab-pane fade show active" id="pills-home2" role="tabpanel" aria-labelledby="pills-home-tab2">
+          <div class="tab-pane fade show active" id="pills-home6" role="tabpanel" aria-labelledby="pills-home-tab2">
 
             {{!-- Solo item table --}}
             <div class="container">
@@ -355,27 +423,25 @@
                     <th scope="col">Password</th>
                     <th scope="col">Item</th>
                     <th scope="col">Stage</th>
+                    <th scope="col">Day</th>
+                    <th scope="col">Phone no</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>548421</td>
-                    <td>Mark</td>
-                    <td>1</td>
+                  {{#each allJudges}}
 
-                  </tr>
                   <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>874512</td>
-                    <td>Mark</td>
-                    <td>2</td>
-
+                    <th scope="row">{{@index}}</th>
+                    <td>{{this.name}}</td>
+                    <td>{{this.username}}</td>
+                    <td>{{this.password}}</td>
+                    <td>{{this.item}}</td>
+                    <td>{{this.stage}}</td>
+                    <td>{{this.day}}</td>
+                    <td>{{this.phoneno}}</td>
                   </tr>
+
+                 {{/each}} 
                 </tbody>
               </table>
             </div>
@@ -387,7 +453,7 @@
 
           </div>
           {{!-- group pills --}}
-          <div class="tab-pane fade" id="pills-profile2" role="tabpanel" aria-labelledby="pills-profile-tab2">
+          <div class="tab-pane fade" id="pills-profile5" role="tabpanel" aria-labelledby="pills-profile-tab2">
 
             {{!-- group Table --}}
             <table class="table table-bordered">
@@ -398,26 +464,28 @@
                   <th scope="col">Student</th>
                   <th scope="col">Item</th>
                   <th scope="col">Stage</th>
+                  <th scope="col">Day</th>
+                   <th scope="col">Time</th>
                   <th scope="col">Chest number</th>
-
+                  <th scope="col">Phone no</th>
                 </tr>
+
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>2</td>
-                  <td>2522</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>2</td>
-                  <td>874512</td>
+                {{#each allotedStudents}}
 
-                </tr>
+                  <tr>
+                    <th scope="row">{{@index}}</th>
+                    <td>{{this.name}}</td>
+                    <td>{{this.item}}</td>
+                    <td>{{this.stage}}</td>
+                    <td>{{this.day}}</td>
+                    <td>{{this.time}}</td>
+                    <td>{{this.chestno}}</td>
+                    <td>{{this.phoneno}}</td>
+                  </tr>
+
+                {{/each}}
               </tbody>
             </table>
             {{!-- end of roup table --}}

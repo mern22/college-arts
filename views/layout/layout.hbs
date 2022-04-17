@@ -26,9 +26,17 @@
 </head>
 
 <body>
-  {{>general-header}}
+  {{#if artsclub}}
+    {{else}}
+    {{>general-header}}
+  {{/if}}
+
   {{{body}}}
-  {{>general-footer}}
+
+  {{#if artsclub}}
+    {{else}}
+    {{>general-footer}}
+  {{/if}}
 
   <!-- Optional JavaScript; choose one of the two! -->
 
