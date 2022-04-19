@@ -13,9 +13,22 @@ const verifyLogin = (req, res, next) =>{
 
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('student/homepage', { showheader: true });
+router.get('/',async function (req, res, next) {
+  const notices = await artsclubHelpers.getAllNotice() ;
+  const posts = await artsclubHelpers.getAllPost() ;
+  console.log("postsssss",posts);
+  res.render('student/homepage', { showheader: true,notices,posts });
 });
+router.get("/view-post/:id",(req, res) => {
+  studentHelpers.getPostItem(req.params.id).then((data) => {
+    if(data){
+      res.render("student/view-post",{artsclub:true,data})
+    }else{
+      res.redirect("/");
+    }
+  })
+  
+})
 router.get('/registration', function (req, res, next) {
   res.render('student/student-registration', { showheader: false });
 });

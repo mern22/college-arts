@@ -28,8 +28,9 @@ router.get('/dashboard',verifyOrganiserLogin,async function(req, res, next) {
   const approvedGroup = await organisersHelpers.getAllGroupApproved() ;
   const allJudges = await organisersHelpers.getAlljudges() ;
   const allotedStudents = await organisersHelpers.getAllAlottedStudents() ;
-
-  res.render("organiser/organiser-dashboard",{approvedSolo,approvedGroup,allJudges,allotedStudents});
+  const posts = await artsclubHelpers.getAllPost() ;
+  const notices = await artsclubHelpers.getAllNotice() ;
+  res.render("organiser/organiser-dashboard",{posts,notices,approvedSolo,approvedGroup,allJudges,allotedStudents});
 });
 
 router.post("/login", (req, res) => {
@@ -88,6 +89,23 @@ router.post("/removejudge", (req, res) => {
     res.redirect("/organiser/dashboard") ;
   }).catch(() => res.redirect("/organiser/dashboard")) ;
 })
+
+router.get("/delete-post/:id",(req, res) => {
+  artsclubHelpers.deletePost(req.params.id).then(() => {
+    res.redirect("/organiser/dashboard") ;
+  }).catch(() => {
+    res.redirect("/organiser/dashboard") ;
+  })
+})
+
+router.get("/delete-notice/:id",(req, res) => {
+  artsclubHelpers.deleteNotice(req.params.id).then(() => {
+    res.redirect("/organiser/dashboard") ;
+  }).catch(() => {
+    res.redirect("/organiser/dashboard") ;
+  })
+})
+
 router.get("/logout",(req,res) => {
   req.session.organiserLoggedIn = false ;
   req.session.organiser=null;

@@ -90,11 +90,13 @@ router.get("/reject/:id",verifyArtsLogin,(req, res) =>{
 })
 
 router.post("/new-post",verifyArtsLogin, (req, res) => {
+  req.body.date = new Date();
   artsclubHelpers.createPost(req.body).then((response) => {
     res.redirect("/artsclub/dashboard") ;
   }).catch(() => res.redirect("/artsclub/dashboard") );
 })
 router.post("/new-notice",verifyArtsLogin, (req, res) => {
+  req.body.date = new Date()
   artsclubHelpers.createNotice(req.body).then((response) => {
     res.redirect("/artsclub/dashboard") ;
   }).catch(() => res.redirect("/artsclub/dashboard") );

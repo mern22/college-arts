@@ -13,7 +13,7 @@
                         class="fas fa-plus-square me-3"></i>All students</a>
                 <a class="list-group-item list-group-item-action py-3" id="list-messages-list" data-mdb-toggle="list"
                     href="#list-messages" role="tab" aria-controls="list-messages"><i class="fas fa-file me-3"></i>
-                    All applicatons</a>
+                    All applications</a>
                 <a class="list-group-item list-group-item-action py-3" id="list-settings-list" data-mdb-toggle="list"
                     href="#list-settings" role="tab" aria-controls="list-settings"><i
                         class="fas fa-certificate me-3"></i>
@@ -36,7 +36,10 @@
 
             <!-- Brand -->
             <a class="navbar-brand ms-5" href="#">
-                <h2>Logo</h2>
+               <div>
+        <img class="asterica-logo" src="/images/asterica-log.png" alt="">
+      </div>
+    
             </a>
             <!-- Search form -->
 
@@ -104,7 +107,7 @@
 
                                                     <div class="modal-body">
                                                         <div class="my-2">
-                                                            <input type="text" id="typeText" placeholder="Title"
+                                                            <input type="text" name="title" id="typeText" placeholder="Title"
                                                                 class="form-control" />
                                                         </div>
                                                         <div class=" mb-4">
@@ -175,6 +178,66 @@
 
                     </div>
                 </section>
+                    <div class="mt-5 ">
+                        <h5 class="my-3 text-primary"> All posts</h5>
+                        <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Message</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each posts}}
+                            <tr>
+                            <th scope="row">{{@index}}</th>
+                            <td>{{this.title}}</td>
+                            <td>{{this.message}}</td>
+                            <td>{{this.author}}</td>
+                             <td>{{this.date}}</td>
+                            <td><a href="/superadmin/delete-post/{{this._id}}" class="btn btn-danger">Delete</a></td>
+
+                            </tr>
+                            {{/each}}
+
+                        </tbody>
+                        </table>
+
+                    </div>
+
+                    <hr class="my-5 " />
+                    <div class="mt-5 ">
+                        <h5 class="my-3 text-primary"> Notice board</h5>
+                        <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Message</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each notices}}
+                            <tr>
+                            <th scope="row">{{@index}}</th>
+                            <td>{{this.message}}</td>
+                            <td>{{this.author}}</td>
+                            <td>{{this.date}}</td>
+                            <td><a href="/superadmin/delete-notice/{{this._id}}" class="btn btn-danger">Delete</a></td>
+
+                            </tr>
+                            {{/each}}
+
+                        </tbody>
+                        </table>
+
+                    </div>
             </div>
 
         </div>
@@ -468,7 +531,7 @@
                         </thead>
                         <tbody>
 
-                            {{#each judges}}
+                            {{#each organiser}}
                             <tr>
                                 <th scope="row">{{@index}}</th>
                                 <td>{{this.name}}</td>
@@ -500,6 +563,9 @@
 
 {{!-- styles for dashboard --}}
 <style>
+    .asterica-logo{
+        height: 50px;
+    }
     body {
         background-color: #fbfbfb;
     }

@@ -1,6 +1,6 @@
 const { get } = require("../config/connection")
 const { ObjectId } = require("mongodb")
-const { STUDENT_COLLECTION,PROGRAM_COLLECTION } = require("../config/collections")
+const { STUDENT_COLLECTION,PROGRAM_COLLECTION, POST_COLLECTION } = require("../config/collections")
 
 module.exports = {
     doSignup : (studentData) => {
@@ -199,6 +199,17 @@ module.exports = {
             get().collection(PROGRAM_COLLECTION).deleteOne({_id: new ObjectId(appid)}).then((res) => {
                 if(res){
                     resolve()
+                }else{
+                    reject()
+                }
+            })
+        })
+    },
+    getPostItem :(postId) => {
+        return new Promise((resolve, reject) => {
+            get().collection(POST_COLLECTION).findOne({_id: new ObjectId(postId)}).then((res) => {
+                if(res){
+                    resolve(res)
                 }else{
                     reject()
                 }

@@ -1,0 +1,43 @@
+<div class="container view-post d-flex bg-light text-dark justify-content-center  my-3 shadow-4-strong p-3 rounded">
+    <div class="col-md-6 ">
+        <a href="/" class="btn btn-primary"><i class="fas fa-home me-3"></i>Home</a>
+        <div>
+            <h5 class="my-5 mb-4 text-center heading-text"><b>{{data.title}}</b></h5>
+        </div>
+        <div class="alert alert-success" role="alert">
+            {{data.message}}
+        </div>
+        <div class="alert alert-success" role="alert">
+            <p>Author : {{data.author}}</p>
+        </div>
+        <div class="alert alert-success" role="alert">
+            <p>Dated on : {{data.date}}</p>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .view-post{
+        min-height: 90vh;
+    }
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+
+    a {
+        color: #00B7FF;
+    }
+
+    .navbar .nav-link {
+        color: #fff !important;
+    }
+
+    li {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+    }
+</style>

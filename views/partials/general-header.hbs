@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-light py-3 bg-primary">
   <!-- Container wrapper -->
-  <div class="container-fluid px-5">
+  <div class="container-fluid px-5 d-flex align-items-center">
     <!-- Toggle button -->
     
         <button
@@ -14,7 +14,9 @@
       >
         <i class="fas fa-bars"></i>
       </button>
-      <h3 class="text-white">Logo</h3>
+      <div>
+        <img class="asterica-logo" src="/images/asterica-log.png" alt="">
+      </div>
     
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarRightAlignExample">
@@ -31,7 +33,9 @@
           <a class="nav-link mx-3 active" href="#contact">Contact us</a>
         </li>
         {{/if}}
+
         <!-- Navbar dropdown -->
+
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle mx-3"
@@ -60,6 +64,9 @@
              <li>
               <a class="dropdown-item" href="/artsclub/login"><i class="fas fa-user-alt me-3"></i>Arts club</a>
             </li>
+            <li>
+               <a class="dropdown-item" href="/"><i class="fas fa-home me-3"></i>Home</a>
+            </li>
           </ul>
         </li>
         
@@ -73,24 +80,27 @@
 
 
 <style>
+  .asterica-logo{
+    height: 45px;
+  }
   *{
   font-family: 'Poppins', sans-serif;
-}
+  }
 
-html{
-  scroll-behavior: smooth;
-}
+  html{
+    scroll-behavior: smooth;
+  }
 
-a {
-  color: #00B7FF;
-}
+  a {
+    color: #00B7FF;
+  }
 
-.navbar .nav-link {
-  color: #fff !important;
-}
-li{
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-}
+  .navbar .nav-link {
+    color: #fff !important;
+  }
+  li{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+  }
 
 </style>

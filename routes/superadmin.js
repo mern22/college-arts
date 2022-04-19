@@ -23,14 +23,17 @@ router.get('/login', function(req, res, next) {
     
 });
 router.get('/dashboard',verifyAdminLogin,async function(req, res, next) {
+
   const allStudents = await artsclubHelpers.getAllStudents() ;
   const allSoloPerformance = await artsclubHelpers.getAllsolo() ;
   const allGroupPerformance = await artsclubHelpers.getAllGroup();
   const artsclub = await superadminHelpers.getArtsclub() ;
   const judges = await superadminHelpers.getAllJudges() ;
   const organiser = await superadminHelpers.getOrganiser() ;
+  const notices = await artsclubHelpers.getAllNotice() ;
+  const posts = await artsclubHelpers.getAllPost();
 
-  res.render('superadmin/admin-dashboard',{allStudents,allSoloPerformance,allGroupPerformance,artsclub,judges,organiser});
+  res.render('superadmin/admin-dashboard',{notices,posts,allStudents,allSoloPerformance,allGroupPerformance,artsclub,judges,organiser});
 });
 
 router.get('/program-report', function(req, res, next) {
@@ -78,11 +81,24 @@ router.post("/deleteartsclub",verifyAdminLogin,(req,res) => {
   }).catch(() => res.redirect("/superadmin/dashboard") )
 })
 
+router.get("/delete-post/:id",(req, res) => {
+  artsclubHelpers.deletePost(req.params.id).then(() => {
+    res.redirect("/superadmin/dashboard") ;
+  }).catch(()=>res.redirect("/superadmin/dashboard") )
+})
+
+router.get("/delete-notice/:id",(req, res) => {
+  artsclubHelpers.deleteNotice(req.params.id).then(() => {
+    res.redirect("/superadmin/dashboard") ;
+  }).catch(()=>res.redirect("/superadmin/dashboard") )
+})
+
 router.get("/logout",(req,res) => {
   req.session.adminLoggedIn = false ;
   req.session.admin=null;
   res.redirect("/superadmin/login") ;
 })
+
 
 
 

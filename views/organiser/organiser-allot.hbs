@@ -32,7 +32,7 @@
                 <div class="row mb-3">
                     <div class="form-group col-md-6">
                         <label class="mb-2">Stage</label>
-                        <select name="stage" class="form-select" aria-label="Default select example">
+                        <select required name="stage" class="form-select" aria-label="Default select example">
                             <option selected value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
@@ -42,7 +42,7 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label class="mb-2">Day</label>
-                        <select name="day" class="form-select" aria-label="Default select example">
+                        <select required name="day" class="form-select" aria-label="Default select example">
                             <option selected value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
@@ -55,11 +55,11 @@
                 <div class="row mb-3">
                     <div class="form-group col-md-6">
                         <label class="mb-2">Chest number</label>
-                        <input type="text" class="form-control" name="chestno">
+                        <input required type="text" class="form-control" name="chestno">
                     </div>
                     <div class="form-group col-md-6">
                         <label class="mb-2">Time ( expected )</label>
-                        <input type="text" class="form-control" name="time">
+                        <input required type="text" class="form-control" name="time">
                     </div>
                 </div>
                     <input name="id" value={{details._id}} hidden>

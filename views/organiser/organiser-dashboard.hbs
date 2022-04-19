@@ -33,7 +33,10 @@
 
       <!-- Brand -->
       <a class="navbar-brand ms-5" href="#">
-        <h2>Logo</h2>
+        <div>
+        <img class="asterica-logo" src="/images/asterica-log.png" alt="">
+      </div>
+    
       </a>
       <!-- Search form -->
 
@@ -91,10 +94,10 @@
 
                         <div class="modal-body">
                           <div class="my-2">
-                            <input type="text" id="typeText" placeholder="Title" class="form-control" />
+                            <input type="text" id="typeText" name="title" required placeholder="Title" class="form-control" />
                           </div>
                           <div class=" mb-4">
-                            <textarea name="message" class="form-control" id="textAreaExample" rows="4"></textarea>
+                            <textarea name="message" required class="form-control" id="textAreaExample" rows="4"></textarea>
                           </div>
                           <input type="text" name="author" value="organiser" hidden>
                         </div>
@@ -133,7 +136,7 @@
                       <form action="/organiser/addnotice" method="post">
                         <div class="modal-body">
                           <div class=" mb-4">
-                            <textarea name="message" class="form-control" placeholder="Messages" id="textAreaExample"
+                            <textarea name="message" required class="form-control" placeholder="Messages" id="textAreaExample"
                               rows="4"></textarea>
                               <input hidden type="text" name="author" value="program_organiser">
                           </div>
@@ -155,6 +158,69 @@
 
         </div>
       </section>
+      <div class="container mt-5 col-md-10">
+        <h5 class="my-3 text-primary">All posts</h5>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Title</th>
+              <th scope="col">Author</th>
+              <th scope="col">Message</th>
+              <th scope="col">Date</th>
+              <th scope="col">Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each posts}}
+            <tr>
+              <th scope="row">{{@index}}</th>
+              <td>{{this.title}}</td>
+              <td>{{this.author}}</td>
+              <td>{{this.message}}</td>
+              <td>{{this.date}}</td>
+              <td><a href="/organiser/delete-post/{{this._id}}" class="btn btn-danger">Delete</a></td>
+
+            </tr>
+            {{/each}}
+
+          </tbody>
+        </table>
+
+      </div>
+
+      <hr class="my-5 " />
+      <div class="container mt-5 col-md-10">
+        <h5 class="my-3 text-primary">All Notices</h5>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+            
+              <th scope="col">Message</th>
+              <th scope="col">Author</th>
+              <th scope="col">Date</th>
+              <th scope="col">Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each notices}}
+            <tr>
+              <th scope="row">{{@index}}</th>
+              <td>{{this.message}}</td>
+              <td>{{this.author}}</td>
+               <td>{{this.date}}</td>
+              <td><a href="/organiser/delete-notice/{{this._id}}" class="btn btn-danger">Delete</a></td>
+
+            </tr>
+            {{/each}}
+
+          </tbody>
+        </table>
+
+      </div>
+
+      <hr class="my-5 " />
     </div>
 
     <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
@@ -275,7 +341,7 @@
               <form action="/organiser/removejudge" method="post">
                 <div class="modal-body">
                   <div class="form-outline mb-4">
-                    <input type="text" name="username"  class="form-control" />
+                    <input required type="text" name="username"  class="form-control" />
                     <label class="form-label" >Username</label>
                   </div>
                 </div>
@@ -310,7 +376,7 @@
                       <div class="row">
                         <div class="form-group col-md-6">
                           <label >Day</label>
-                          <select name="day" class="form-control">
+                          <select required name="day" class="form-control">
                             <option value="1" selected>1</option>
                             <option value="2" >2</option>
                             <option value="3" >3</option>
@@ -321,7 +387,7 @@
                         </div>
                         <div class="form-group col-md-6">
                           <label >Stage</label>
-                          <select name="stage" class="form-control">
+                          <select required name="stage" class="form-control">
 
                             <option value="1" selected>1</option>
                             <option value="2" >2</option>
@@ -335,21 +401,21 @@
                       <div class="row mt-2">
                         <div class="form-group col-md-6">
                           <label >Name</label>
-                          <input name="name" type="text" class="form-control" >
+                          <input required name="name" type="text" class="form-control" >
                         </div>
                         <div class="form-group col-md-6">
                           <label >Username</label>
-                          <input name="username" type="text" class="form-control" >
+                          <input required name="username" type="text" class="form-control" >
                         </div>
                       </div>
                       <div class="row mt-2">
                         <div class="form-group col-md-6">
                           <label >Password</label>
-                          <input name="password" type="password" class="form-control" >
+                          <input required name="password" type="password" class="form-control" >
                         </div>
                         <div class="form-group col-md-6">
                           <label >Item</label>
-                          <input type="text" name="item" class="form-control">
+                          <input required type="text" name="item" class="form-control">
                         </div>
                       </div>
 
@@ -357,7 +423,7 @@
                         
                         <div class="form-group col-md-6">
                           <label>Phone no.</label>
-                          <input type="text" name="phoneno" class="form-control">
+                          <input required type="text" name="phoneno" class="form-control">
                         </div>
                       </div>
 
@@ -510,6 +576,9 @@
 
 {{!-- styles for dashboard --}}
 <style>
+    .asterica-logo{
+        height: 50px;
+    }
   body {
     background-color: #fbfbfb;
   }
