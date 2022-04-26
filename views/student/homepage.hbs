@@ -5,6 +5,7 @@
         })();
 
         const sendEmail = (params) => {
+
           var formData = {
             from_name:document.getElementById("fromName").value,
             from_email:document.getElementById("fromEmail").value,
@@ -12,6 +13,7 @@
             message:document.getElementById("msg").value
           }
           emailjs.send("service_zhxebh3","template_f0adwpf",formData).then((res) => {
+              
               alert("Successfuly sent") ;
               location.reload();
           })
@@ -122,7 +124,7 @@
 
     {{!-- About us page --}}
     <section id="aboutus" class="mb-5 pb-5">
-      <h4 class="mb-5 text-center"><strong>About Us</strong></h4>
+      <h4 class="mb-5 text-center"><strong>About Asterica</strong></h4>
       <section class="row d-flex justify-content-between align-items-center">
 
 
@@ -177,7 +179,7 @@
                 <p class="my-2">
                   <i class="author">( {{this.author}} )</i>
                 </p></h5>
-              <a href="/view-post/{{this._id}}" class="px-5 btn btn-outline-secondary btn-rounded">View post</a>
+              <a href="/view-post/{{this._id}}" class="px-5 btn btn-outline-success btn-rounded">View post</a>
             </div>
           </div>
         </div>
@@ -293,9 +295,15 @@
 <style>
   .img-banner{
     height: 350px;
+  
   }
   .post-wrapper{
     background-color: rgba(112, 107, 107, 0.075);
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+  }
+  .post-wrapper:hover{
+    border: rgb(40, 238, 116) solid 2px;
   }
   .author{
     font-size: 15px;
