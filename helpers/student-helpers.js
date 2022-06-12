@@ -3,6 +3,7 @@ const { ObjectId } = require("mongodb")
 const { STUDENT_COLLECTION,PROGRAM_COLLECTION, POST_COLLECTION } = require("../config/collections")
 
 module.exports = {
+    
     doSignup : (studentData) => {
         return new Promise((resolve,reject) => {
             if(studentData.password===studentData.confirmpassword){
