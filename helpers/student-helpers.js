@@ -8,17 +8,17 @@ module.exports = {
         return new Promise((resolve,reject) => {
             if(studentData.password===studentData.confirmpassword){
                 get().collection(STUDENT_COLLECTION).insertOne(studentData).then((data) => {
-                    resolve(data)
+                    resolve(data);
                 })
             } else {
-                reject("Password does not match..")
+                reject("Password does not match..") ;
             }
         })
     },
     checkRegnoExist : (regno) => {
         return new Promise( async(resolve, reject) => {
             const student = await get().collection(STUDENT_COLLECTION).findOne({registerno:regno}) ;
-            resolve(student)
+            resolve(student);
         })
     },
     getStudentData : (student_id) => {

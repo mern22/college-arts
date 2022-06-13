@@ -11,13 +11,13 @@ const verifyLogin = (req, res, next) =>{
   }
 }
 
-
 /* GET home page. */
 router.get('/',async function (req, res, next) {
   const notices = await artsclubHelpers.getAllNotice() ;
   const posts = await artsclubHelpers.getAllPost() ;
   res.render('student/homepage', { showheader: true,notices,posts });
 });
+
 router.get("/view-post/:id",(req, res) => {
   studentHelpers.getPostItem(req.params.id).then((data) => {
     if(data){
@@ -26,11 +26,12 @@ router.get("/view-post/:id",(req, res) => {
       res.redirect("/");
     }
   })
-  
 })
+
 router.get('/registration', function (req, res, next) {
   res.render('student/student-registration', { showheader: false });
 });
+
 router.get('/login', function (req, res, next) {
 
   if(req.session.studentLoggedIn){
@@ -70,7 +71,7 @@ router.post("/signup", (req, res) => {
     if (data) {
       res.render("student/student-login", {"loginErr":"Already have an account !"})
     } else {
-      studParticipatingParticipatingParticipatingentHelpers.doSignup(req.body).then((response) => {
+      studentHelpers.doSignup(req.body).then((response) => {
         studentHelpers.getStudentData(response.insertedId).then((student) => {
           res.redirect("/dashboard");
         })
