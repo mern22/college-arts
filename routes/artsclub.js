@@ -35,6 +35,11 @@ router.get('/dashboard',verifyArtsLogin, async function(req, res, next) {
   const allNotice = await artsclubHelpers.getAllNotice() ;
   const results = await artsclubHelpers.getAllCompletedApplications() ;
   const organisers = await artsclubHelpers.getAllOrganiser() ;
+
+  for (let index = 0; index < results.length; index++) {
+    results[index].result=parseInt(results[index].mark1)+parseInt(results[index].mark2)+parseInt(results[index].mark3);
+    console.log(results[index]);
+  }
   
   res.render("artsclub/artsclub-dashboard",{artsclub, allStudents,allSoloPerformance,allGroupPerformance,allPosts,allNotice,results,organisers})
 });

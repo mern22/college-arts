@@ -16,14 +16,14 @@ module.exports = {
         })
     },
     updateMark1: (data) => {
-        const { mark1,id } = data
+        const { mark1,id } = data ;
         return new Promise((resolve, reject) => {
-            get().collection(PROGRAM_COLLECTION).updateOne({ _id:new ObjectId(id) },{$set:{mark1:mark1,status:"completed"}}).then((res) => {
+            get().collection(PROGRAM_COLLECTION).updateOne({ _id:new ObjectId(id) },{$set:{mark1:mark1}}).then((res) => {
                 console.log(res);
                 if(res) {
                     resolve(res)
                  } else {
-                     reject()
+                     reject();
                  }
             })
         })
@@ -31,8 +31,8 @@ module.exports = {
     updateMark2: (data) => {
         const { mark2,id } = data
         return new Promise((resolve, reject) => {
-            get().collection(PROGRAM_COLLECTION).updateOne({ _id:new ObjectId(id) },{$set:{mark2:mark2,status:"completed"}}).then((res) => {
-                console.log(res);
+            get().collection(PROGRAM_COLLECTION).updateOne({ _id:new ObjectId(id) },{$set:{mark2:mark2}}).then((res) => {
+                console.log(res);   
                 if(res) {
                     resolve(res)
                  } else {
@@ -44,12 +44,23 @@ module.exports = {
     updateMark3: (data) => {
         const { mark3,id } = data ;
         return new Promise((resolve, reject) => {
-            get().collection(PROGRAM_COLLECTION).updateOne({ _id:new ObjectId(id) },{$set:{mark3:mark3,status:"completed"}}).then((res) => {
+            get().collection(PROGRAM_COLLECTION).updateOne({ _id:new ObjectId(id) },{$set:{mark3:mark3}}).then((res) => {
                 console.log(res);
                 if(res) {
-                    resolve(res)
+                    resolve(res);
                  } else {
-                     reject()
+                     reject();
+                 }
+            })
+        })
+    },
+    updateComplete : (id) => {
+        return new Promise((resolve, reject) => {
+            get().collection(PROGRAM_COLLECTION).updateOne({_id: new ObjectId(id)},{$set:{status:"completed"}}).then((res) => {
+                if(res) {
+                    resolve(res);
+                 } else {
+                     reject();
                  }
             })
         })

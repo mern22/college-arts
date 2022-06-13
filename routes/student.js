@@ -16,7 +16,6 @@ const verifyLogin = (req, res, next) =>{
 router.get('/',async function (req, res, next) {
   const notices = await artsclubHelpers.getAllNotice() ;
   const posts = await artsclubHelpers.getAllPost() ;
-  console.log("postsssss",posts);
   res.render('student/homepage', { showheader: true,notices,posts });
 });
 router.get("/view-post/:id",(req, res) => {

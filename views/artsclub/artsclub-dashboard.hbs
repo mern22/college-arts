@@ -88,6 +88,7 @@
                 <th scope="col">Reg no</th>
                 <th scope="col">Class</th>
                 <th scope="col">Phone</th>
+                <th scope="col">Password</th>
               </tr>
             </thead>
             <tbody>
@@ -98,6 +99,7 @@
                 <td>{{this.registerno}}</td>
                 <td>{{this.class}}</td>
                 <td>{{this.phoneno}}</td>
+                 <td>{{this.password}}</td>
               </tr>
               {{/each}}
             </tbody>
@@ -323,6 +325,7 @@
       <div class="container">
         <h3 class="text-center mb-5">Result statistics</h3>
         <table class="table table-bordered">
+          <button onclick="window.print()" class="btn btn-success mb-3">Print this page</button>
           <thead>
             <tr>
               <th scope="col">No</th>
@@ -344,7 +347,7 @@
               <td>{{this.mark1}}</td>
               <td>{{this.mark2}}</td>
               <td>{{this.mark3}}</td>
-
+               <td>{{this.result}}</td>
             </tr>
             {{/each}}
 

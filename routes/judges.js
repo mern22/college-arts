@@ -38,7 +38,7 @@ router.post("/login", (req, res) => {
 
     req.session.judgesLoggedIn=true; 
     req.session.judge=response ;
-    console.log("judge",response);
+
     res.redirect("/judges/dashboard");
 
   }).catch((err) => {
@@ -56,25 +56,33 @@ router.get("/mark-enter/:id",verifyJudgesLogin, (req, res) => {
 })
 
 router.post("/mark1", (req, res) => {
-  console.log(req.body);
   judgesHelpers.updateMark1(req.body).then(() => {
     res.redirect("/judges/dashboard")
   }).catch(() => res.send("Error occured.."))
 })
 
 router.post("/mark2", (req, res) => {
-  console.log(req.body);
   judgesHelpers.updateMark2(req.body).then(() => {
     res.redirect("/judges/dashboard")
   }).catch(() => res.send("Error occured.."))
 })
 
 router.post("/mark3", (req, res) => {
-  console.log(req.body);
   judgesHelpers.updateMark3(req.body).then(() => {
     res.redirect("/judges/dashboard") ;
   }).catch(() => res.send("Error occured.."))
 })
+
+router.get("/completed/:id",(req, res) => {
+  const appId = req.params.id ; 
+  judgesHelpers.updateComplete(appId).then(() => {
+    res.redirect("/judges/dashboard") ;
+  }).catch(() => {
+    res.send("error occured..")
+  })
+})
+
+
 
 router.get("/logout",(req,res) => {
   req.session.judgesLoggedIn = false ;
