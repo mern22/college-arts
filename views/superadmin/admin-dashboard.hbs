@@ -1,0 +1,642 @@
+<header>
+    <!-- Sidebar -->
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+        <div class="position-sticky">
+            <div class="list-group list-group-flush mx-3 mt-4 py-3" id="list-tab" role="tablist">
+
+                <a class="list-group-item list-group-item-action active py-3" id="list-home-list" data-mdb-toggle="list"
+                    href="#list-home" role="tab" aria-controls="list-home"><i class="fas fa-tachometer-alt me-3"></i>
+                    Dashboard
+                </a>
+                <a class="list-group-item list-group-item-action py-3" id="list-profile-list" data-mdb-toggle="list"
+                    href="#list-profile" role="tab" aria-controls="list-profile"><i
+                        class="fas fa-plus-square me-3"></i>All students</a>
+                <a class="list-group-item list-group-item-action py-3" id="list-messages-list" data-mdb-toggle="list"
+                    href="#list-messages" role="tab" aria-controls="list-messages"><i class="fas fa-file me-3"></i>
+                    All applications</a>
+                <a class="list-group-item list-group-item-action py-3" id="list-settings-list" data-mdb-toggle="list"
+                    href="#list-settings" role="tab" aria-controls="list-settings"><i
+                        class="fas fa-certificate me-3"></i>
+                    Cordinators</a>
+
+            </div>
+        </div>
+    </nav>
+    <!-- Sidebar -->
+
+    <!-- Navbar -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+                aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Brand -->
+            <a class="navbar-brand ms-5" href="#">
+               <div>
+        <img class="asterica-logo" src="/images/asterica-log.png" alt="">
+      </div>
+    
+            </a>
+            <!-- Search form -->
+
+
+            <!-- Right links -->
+            <ul class="navbar-nav ms-auto d-flex flex-row">
+                <!-- Notification dropdown -->
+
+                <!-- Avatar -->
+                <li class="nav-item dropdown me-3">
+                    <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
+                        id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user-circle me-3"></i><span><b>Admin</b></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                        <li>
+                            <a class="dropdown-item" href="/superadmin/dashboard"><i
+                                    class="me-3 fas fa-user"></i>Principal</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/superadmin/logout"><i class="me-3 fas fa-sign-out-alt"></i>Logout</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+</header>
+<!--Main Navigation-->
+
+<!--Main layout-->
+<main style="margin-top: 70px;">
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active p-3" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+
+            <div class="container py-3">
+                <h3 class="text-center my-3">Welcome to Asterica</h3>
+
+
+                <section class="text-center mt-2 container">
+
+                    <div class="row py-4">
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Add Post</h5>
+                                    <p class="card-text">Click on Add Post to see the messgaes about events</p>
+                                    <button type="button" class="btn btn-primary" data-mdb-toggle="modal"
+                                        data-mdb-target="#exampleModal">
+                                        Click Here
+                                    </button>
+
+                                    <div class="modal fade" id="exampleModal" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Post Details</h5>
+                                                    <button type="button" class="btn-close" data-mdb-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <form action="/superadmin/addpost" method="post">
+
+                                                    <div class="modal-body">
+                                                        <div class="my-2">
+                                                            <input type="text" name="title" id="typeText" placeholder="Title"
+                                                                class="form-control" />
+                                                        </div>
+                                                        <div class=" mb-4">
+                                                            <textarea name="message" class="form-control"
+                                                                id="textAreaExample" rows="4"></textarea>
+                                                        </div>
+                                                        <input type="text" name="author" value="Principal" hidden>
+                                                    </div>
+
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger"
+                                                            data-mdb-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-success">Save</button>
+                                                    </div>
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Notice board</h5>
+                                    <p class="card-text">Send Notifications or other information to students</p>
+                                    <button type="button" class="btn btn-primary" data-mdb-toggle="modal"
+                                        data-mdb-target="#exampleModal2">
+                                        Click here
+                                    </button>
+                                    <div class="modal fade" id="exampleModal2" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Notice board</h5>
+                                                    <button type="button" class="btn-close" data-mdb-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+
+                                                <form action="/superadmin/addnotice" method="post">
+                                                    <div class="modal-body">
+                                                        <div class=" mb-4">
+                                                            <textarea name="message" class="form-control"
+                                                                placeholder="Messages" id="textAreaExample"
+                                                                rows="4"></textarea>
+                                                            <input hidden type="text" name="author" value="Principal">
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger"
+                                                            data-mdb-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-success">Save</button>
+                                                    </div>
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+                    <div class="mt-5 ">
+                        <h5 class="my-3 text-primary"> All posts</h5>
+                        <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Message</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each posts}}
+                            <tr>
+                            <th scope="row">{{@index}}</th>
+                            <td>{{this.title}}</td>
+                            <td>{{this.message}}</td>
+                            <td>{{this.author}}</td>
+                             <td>{{this.date}}</td>
+                            <td><a href="/superadmin/delete-post/{{this._id}}" class="btn btn-danger">Delete</a></td>
+
+                            </tr>
+                            {{/each}}
+
+                        </tbody>
+                        </table>
+
+                    </div>
+
+                    <hr class="my-5 " />
+                    <div class="mt-5 ">
+                        <h5 class="my-3 text-primary"> Notice board</h5>
+                        <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Message</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each notices}}
+                            <tr>
+                            <th scope="row">{{@index}}</th>
+                            <td>{{this.message}}</td>
+                            <td>{{this.author}}</td>
+                            <td>{{this.date}}</td>
+                            <td><a href="/superadmin/delete-notice/{{this._id}}" class="btn btn-danger">Delete</a></td>
+
+                            </tr>
+                            {{/each}}
+
+                        </tbody>
+                        </table>
+
+                    </div>
+            </div>
+
+        </div>
+
+        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+            <hr class="my-5 " />
+            <section class="text-center mt-2  container">
+
+                <h3 class="my-5">All students List</h3>
+                <div class="container">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Reg no</th>
+                                <th scope="col">Class</th>
+                                <th scope="col">Phone</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each allStudents}}
+                            <tr>
+                                <th scope="row">{{@index}}</th>
+                                <td>{{this.name}}</td>
+                                <td>{{this.registerno}}</td>
+                                <td>{{this.class}}</td>
+                                <td>{{this.phoneno}}</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+            </section>
+        </div>
+
+
+        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+            <hr class="my-5 " />
+            <section id="participants" class="container">
+                <h2 class="text-center">Application list</h2>
+
+                <ul class="nav nav-pills mb-3" id="pills-tab2" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-home-tab2" data-mdb-toggle="pill"
+                            data-mdb-target="#pills-home2" type="button" role="tab" aria-controls="pills-home"
+                            aria-selected="true">
+                            SOLO
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-profile-tab2" data-mdb-toggle="pill"
+                            data-mdb-target="#pills-profile2" type="button" role="tab" aria-controls="pills-profile"
+                            aria-selected="false">
+                            GROUP
+                        </button>
+                    </li>
+                </ul>
+                {{!-- solo item pills --}}
+                <div class="tab-content" id="pills-tabContent2">
+                    <div class="tab-pane fade show active" id="pills-home2" role="tabpanel"
+                        aria-labelledby="pills-home-tab2">
+
+                        {{!-- Solo item table --}}
+                        <div class="container">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Reg no</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Phoneno</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    {{#each allSoloPerformance}}
+                                    <tr>
+                                        <th scope="row">{{@index}}</th>
+                                        <td>{{this.name}}</td>
+                                        <td>{{this.regno}}</td>
+                                        <td><span class="badge badge-pill badge-success">{{this.status}}</span></td>
+                                        <td>{{this.phoneno}}</td>
+                                    </tr>
+                                    {{/each}}
+
+                                </tbody>
+                            </table>
+                        </div>
+                        {{!-- solo item table ends --}}
+
+
+
+
+
+                    </div>
+                    {{!-- group pills --}}
+                    <div class="tab-pane fade" id="pills-profile2" role="tabpanel" aria-labelledby="pills-profile-tab2">
+
+                        {{!-- group Table --}}
+                        <div class="container">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Group Leader</th>
+                                        <th scope="col">Item</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Phoneno</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each allGroupPerformance}}
+                                    <tr>
+                                        <th scope="row">{{@index}}</th>
+                                        <td>{{this.leaderregno}}</td>
+                                        <td>{{this.item}}</td>
+                                        <td><span class="badge badge-pill badge-success">{{this.status}}</span></td>
+                                        <td>{{this.phoneno}}</td>
+                                    </tr>
+
+                                    {{/each}}
+
+                                </tbody>
+                            </table>
+
+
+
+                        </div>
+                        {{!-- end of roup table --}}
+                    </div>
+                    {{!-- <div class="tab-pane fade" id="pills-contact2" role="tabpanel"
+                        aria-labelledby="pills-contact-tab2">
+                        Tab 3 content
+                    </div> --}}
+                </div>
+                {{!-- end of group pills --}}
+
+
+
+
+
+
+            </section>
+        </div>
+
+        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+            <hr class="my-5 " />
+            <section id="participants" class="container">
+
+
+                <div class="container">
+                    <h5 class="my-3 text-primary">Arts club secratrary</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary my-3" data-mdb-toggle="modal"
+                        data-mdb-target="#exampleModalNew">
+                        New
+                    </button>
+                    <button type="button" class="btn btn-danger my-3" data-mdb-toggle="modal"
+                        data-mdb-target="#exampleModalDelete">
+                        Delete
+                    </button>
+
+                    <div class="modal fade" id="exampleModalDelete" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Remove Arts club secratrary</h5>
+                                    <button type="button" class="btn-close" data-mdb-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="/superadmin/deleteartsclub" method="post">
+
+                                        <input class="form-control my-2" required type="text" name="email"
+                                            placeholder="Email ID">
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-mdb-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalNew" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Arts club secratrary</h5>
+                                    <button type="button" class="btn-close" data-mdb-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="/superadmin/addartsclub" method="post">
+                                        <input class="form-control my-2" required type="text" name="name" placeholder="Name">
+                                        <input class="form-control my-2" required type="text" name="email"
+                                            placeholder="Email ID">
+                                        <input class="form-control my-2" required type="text" name="password"
+                                            placeholder="Password">
+                                        <input class="form-control my-2" required type="text" name="phoneno"
+                                            placeholder="Phone no.">
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-mdb-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Phone no.</th>
+                                <th scope="col">Password</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {{#each artsclub}}
+                            <tr>
+                                <th scope="row">{{@index}}</th>
+                                <td>{{this.name}}</td>
+                                <td>{{this.email}}</td>
+                                <td>{{this.phoneno}}</td>
+                                <td>{{this.password}}</td>
+                            </tr>
+                            {{/each}}
+
+                        </tbody>
+                    </table>
+                    <h5 class="my-3 text-primary">Judges</h5>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Item</th>
+                                <th scope="col">Phoneno</th>
+                                <th scope="col">Password</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {{#each judges}}
+                            <tr>
+                                <th scope="row">{{@index}}</th>
+                                <td>{{this.name}}</td>
+                                <td>{{this.username}}</td>
+                                <td>{{this.item}}</td>
+                                <td>{{this.phoneno}}</td>
+                                <td>{{this.password}}</td>
+                            </tr>
+                            {{/each}}
+
+                        </tbody>
+                    </table>
+
+                    <h5 class="my-3 text-primary">Organiser</h5>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Phoneno</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Password</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {{#each organiser}}
+                            <tr>
+                                <th scope="row">{{@index}}</th>
+                                <td>{{this.name}}</td>
+                                <td>{{this.phoneno}}</td>
+                                <td>{{this.email}}</td>
+                                <td>{{this.password}}</td>
+                            </tr>
+                            {{/each}}
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+
+
+            </section>
+
+        </div>
+        <div class="container pt-4">
+            <hr class="my-5 " />
+        </div>
+
+
+
+</main>
+<!--Main layout-->
+
+
+{{!-- styles for dashboard --}}
+<style>
+    .asterica-logo{
+        height: 50px;
+    }
+    body {
+        background-color: #fbfbfb;
+    }
+
+    @media (min-width: 991.98px) {
+        main {
+            padding-left: 240px;
+        }
+    }
+
+    /* Sidebar */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        padding: 58px 0 0;
+        /* Height of navbar */
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+        width: 240px;
+        z-index: 600;
+    }
+
+    @media (max-width: 991.98px) {
+        .sidebar {
+            width: 100%;
+        }
+    }
+
+    .sidebar .active {
+        border-radius: 5px;
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    }
+
+    .fa-user-circle {
+        font-size: 25px;
+        color: #fff;
+    }
+
+    .sidebar-sticky {
+        position: relative;
+        top: 0;
+        height: calc(100vh - 48px);
+        padding-top: 0.5rem;
+        overflow-x: hidden;
+        overflow-y: auto;
+        /* Scrollable contents if viewport is shorter than content. */
+    }
+
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    a {
+        color: #00B7FF;
+    }
+
+    .navbar .nav-link {
+        color: #fff !important;
+    }
+
+    li {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+    }
+
+    .about-img {
+        width: 350px;
+    }
+</style>

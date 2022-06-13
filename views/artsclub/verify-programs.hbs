@@ -1,1 +1,170 @@
-<h2>Verify programs</h2>
+<div class="container d-flex bg-secondary text-white justify-content-center my-3 shadow-4-strong p-3 rounded">
+    <div class="col-md-6 ">
+    <a href="/artsclub/dashboard" class="btn btn-info">Go back</a>
+        <div>
+            <h3 class="my-3 mb-4 text-center heading-text"><b>Application verification</b></h3>
+        </div>
+        {{#if solo}}
+         <div>
+
+            <div class="row mb-3">
+                <div class="form-group col-md-6">
+                    <label class="mb-2">Name</label>
+                    <input type="text" class="form-control" value={{details.name}}  disabled>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="mb-2">Item</label>
+                    <input type="text" class="form-control" value={{details.item}}  disabled>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="form-group col-md-6">
+                    <label class="mb-2">Phone no.</label>
+                    <input type="text" class="form-control"  value={{details.phoneno}} disabled>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="mb-2">Program Type</label>
+                    <input type="text" class="form-control" value={{details.programtype}} disabled>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="form-group col-md-6">
+                    <label class="mb-2">Register no.</label>
+                    <input type="text" class="form-control"  value={{details.regno}} disabled>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="mb-2">Class</label>
+                    <input type="text" class="form-control" value={{details.class}} disabled>
+                </div>
+            </div>
+
+        
+            <div class="row mb-2">
+                <div class="form-group col-md-6">
+                    <p>Status : <span class="badge badge-pill badge-primary">{{details.status}}</span></p>
+                </div>
+            </div>
+
+            <form  action="/artsclub/verify-message" method="post" class="row mb-2">
+                <div class="form-group col-md-10">
+                    <input type="text" class="form-control" name="message" >
+                    <input value={{details._id}} name="appid" hidden>
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-info" id="btn-sent">Send</button>
+                </div>
+            </form>
+
+
+           <div class="my-3 pb-2">
+                <a href="/artsclub/approve/{{details._id}}"  class="btn btn-success me-3">Approve</a>
+                <a href="/artsclub/reject/{{details._id}}"  class="btn btn-danger">Reject</a>
+            </div>
+
+
+        </div>
+        {{else}}
+        <div>
+
+            <div class="row mb-3">
+                <div class="form-group col-md-6">
+                    <label class="mb-2">Group Leader</label>
+                    <input type="text" class="form-control" value={{details.leaderregno}}  disabled>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="mb-2">Item</label>
+                    <input type="text" class="form-control" value={{details.item}}  disabled>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="form-group col-md-6">
+                    <label class="mb-2">Phone no.</label>
+                    <input type="text" class="form-control"  value={{details.phoneno}} disabled>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="mb-2">Program Type</label>
+                    <input type="text" class="form-control" value={{details.programtype}} disabled>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <p>Team Members </p>
+                <div class="form-group col-md-4">
+                    <ul>
+                        <li>{{details.member1}}</li>
+                        <li>{{details.member2}}</li>
+                        <li>{{details.member3}}</li>
+                        
+                    </ul>
+                </div>
+                <div class="form-group col-md-4">
+                    <ul>
+                        <li>{{details.member4}}</li>
+                        <li>{{details.member5}}</li>
+                        <li>{{details.member6}}</li>
+
+                    </ul>
+                </div>
+                <div class="form-group col-md-4">
+                    <ul>
+                        <li>{{details.member7}}</li>
+                        <li>{{details.member8}}</li>
+                        <li>{{details.member9}}</li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="form-group col-md-6">
+                    <p>Status : <span class="badge badge-pill badge-primary">{{details.status}}</span></p>
+                </div>
+            </div>
+
+            <form  action="/artsclub/verify-message" method="post" class="row mb-2">
+                <div class="form-group col-md-10">
+                    <input type="text" class="form-control" name="message" >
+                    <input value={{details._id}} name="appid" hidden>
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-info" id="btn-sent">Send</button>
+                </div>
+            </form>
+
+            <div class="my-3 pb-2">
+                <a href="/artsclub/approve/{{details._id}}"  class="btn btn-success me-3">Approve</a>
+                <a href="/artsclub/reject/{{details._id}}"  class="btn btn-danger">Reject</a>
+            </div>
+
+        </div>
+        {{/if}}
+    </div>
+</div>
+
+
+<style>
+  *{
+  font-family: 'Poppins', sans-serif;
+}
+.heading-text{
+    letter-spacing: 0.8px;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.navbar .nav-link {
+  color: #fff !important;
+}
+li{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+</style>

@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+var session = require("express-session") ;
 var { connect, get } = require("./config/connection") ;
 
 connect((err) => {
@@ -21,6 +21,16 @@ var organiserRouter = require("./routes/organiser");
 
 var hbs = require("express-handlebars") ;
 var app = express();
+
+// session  details
+
+const oneDay = 1000 * 60 * 60 * 24;
+app.use(session({
+  secret:"key",
+  cookie:{
+    maxAge:oneDay
+  }
+}))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
