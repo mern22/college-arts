@@ -6,7 +6,7 @@ const state = {
 
 const connect = (done) => {
 
-    const url = "mongodb://localhost:27017/"
+    const url = process.env.MONGODB_URI || "mongodb://localhost:27017/"
     const dbname = "asterica"
 
     MongoClient.connect( url, (err, data) => {
